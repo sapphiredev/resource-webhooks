@@ -7,7 +7,6 @@
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
 				addNewOptionHref="/configure/webhooks"
-				optionsStringReplacer="webhooks"
 				:options="webhookStorage.webhooks"
 				class="pt-2 lg:pt-3"
 			/>
@@ -24,7 +23,6 @@
 				name="role"
 				label="Optionally choose a role to mention"
 				addNewOptionHref="/configure/roles"
-				optionsStringReplacer="roles"
 				:options="rolesStorage.roles"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
