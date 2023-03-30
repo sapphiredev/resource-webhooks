@@ -83,11 +83,7 @@ export default defineNuxtConfig({
 		autoImports: ['defineStore', 'acceptHMRUpdate']
 	},
 	nitro: {
-		preset: 'cloudflare-pages',
-		prerender: {
-			routes: ['/'],
-			crawlLinks: true
-		}
+		preset: 'cloudflare-pages'
 	},
 	pwa: {
 		registerType: 'autoUpdate',
