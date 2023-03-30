@@ -10,13 +10,6 @@ const jumpRegex = /%JUMP_TO_TOP%/gm;
 export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'post' | 'update') {
 	if (!params.webhookUrl?.value || !params.text) return;
 
-	const bodyWithMentions: RESTPostAPIWebhookWithTokenJSONBody = {
-		allowed_mentions: {
-			users: [],
-			roles: params.role?.value ? [params.role.value] : []
-		}
-	};
-
 	if (params.role && !params.text.startsWith(bold('New announcement for'))) {
 		params.text = `${bold('New announcement for')} ${roleMention(params.role.value)}:\n${params.text}`;
 	}
@@ -50,8 +43,11 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 		}
 
 		const body: RESTPostAPIWebhookWithTokenJSONBody = {
-			...bodyWithMentions,
-			content: part
+			content: part,
+			allowed_mentions: {
+				users: [],
+				roles: extractRoles(params.text)
+			}
 		};
 
 		const response = await $fetch<RESTPostAPIChannelMessageResult>(url.toString(), {
@@ -70,4 +66,11 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 			await promiseTimeout(1000);
 		}
 	}
+}
+
+const roleMatcherRegex = /<@&(?<id>\d{17,20})>/g;
+function extractRoles(text: string): string[] {
+	const matches = text.matchAll(roleMatcherRegex);
+
+	return [...matches].map((match) => match.groups?.id).filter(Boolean) as string[];
 }
