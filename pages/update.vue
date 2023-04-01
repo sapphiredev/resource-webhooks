@@ -70,14 +70,14 @@ async function getMessageContent() {
 		$toast.show({
 			type: 'success',
 			message: 'Set the content from Discord to the text input field',
-			timeout: 10,
+			timeout: 5,
 			pauseOnHover: true
 		});
 	} else {
 		$toast.show({
 			type: 'danger',
 			message: 'Failed to fetch message from Discord',
-			timeout: 10,
+			timeout: 5,
 			pauseOnHover: true
 		});
 	}
