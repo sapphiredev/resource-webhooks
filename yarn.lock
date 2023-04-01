@@ -6941,20 +6941,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"monaco-editor-nls@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "monaco-editor-nls@npm:3.0.0"
-  checksum: 935a77ec60a753e518229889360cdf5a666a62d18db9875eb07a20ad17817a009722cc2e56040abf0e85740617cba7482b697e6eab0bf982c61b419afe43416e
-  languageName: node
-  linkType: hard
-
-"monaco-editor@npm:^0.36.1":
-  version: 0.36.1
-  resolution: "monaco-editor@npm:0.36.1"
-  checksum: 75e7cfbe03b4cb964e550c8021d6b2cc4f5265ee17703ddda7a63a26492a95fdbfaf34aa3e50004930ff8afb1422ae2b1dc0b9d3f122d558bdf1a335403937fd
-  languageName: node
-  linkType: hard
-
 "mri@npm:^1.1.0, mri@npm:^1.2.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
@@ -7275,19 +7261,6 @@ __metadata:
   bin:
     nuxi: bin/nuxi.mjs
   checksum: fdfc8f42e8b3e351e29ae138d618d1677a6f0485480a21b228808f20e633dee1622956011b57604fd08042e23b606dcd0fcdad566844bbec604c794c2a2b0e52
-  languageName: node
-  linkType: hard
-
-"nuxt-monaco-editor@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "nuxt-monaco-editor@npm:1.2.2"
-  dependencies:
-    "@nuxt/kit": ^3.3.1
-    monaco-editor-nls: ^3.0.0
-    vite-plugin-static-copy: ^0.13.1
-  peerDependencies:
-    monaco-editor: "*"
-  checksum: e93c6f5520d93844327dd49067e734f008ac1be75c081fc277b37fb9985d02585f230e373197f86ccad28a3d5e37464fe944a9108d6ce8a785a8d0efcced4a90
   languageName: node
   linkType: hard
 
@@ -10168,20 +10141,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-static-copy@npm:^0.13.1":
-  version: 0.13.1
-  resolution: "vite-plugin-static-copy@npm:0.13.1"
-  dependencies:
-    chokidar: ^3.5.3
-    fast-glob: ^3.2.11
-    fs-extra: ^11.1.0
-    picocolors: ^1.0.0
-  peerDependencies:
-    vite: ^3.0.0 || ^4.0.0
-  checksum: dc2281174ac5255740bfdaadd5aac84416fa086a5a6529c6f5a6d4f914cb9b6d8219e3d86df07cbf40a510a6afe385156356f4cb172a0896d5d47e0858f901be
-  languageName: node
-  linkType: hard
-
 "vite@npm:^3.0.0 || ^4.0.0, vite@npm:~4.2.1":
   version: 4.2.1
   resolution: "vite@npm:4.2.1"
@@ -10377,9 +10336,7 @@ __metadata:
     "@vueuse/nuxt": ^9.13.0
     daisyui: ^2.51.5
     discord-api-types: ^0.37.37
-    monaco-editor: ^0.36.1
     nuxt: 3.3.2
-    nuxt-monaco-editor: ^1.2.2
     pinia: ^2.0.33
     prettier: ^2.8.7
     prettier-plugin-tailwindcss: ^0.2.6

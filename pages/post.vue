@@ -2,7 +2,7 @@
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit">
 			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
-			<forms-monaco-editor name="text" label="Message Text" />
+			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"

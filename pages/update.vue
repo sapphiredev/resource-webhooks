@@ -2,7 +2,7 @@
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit">
 			<modals-review :values="values" :is-editing="true" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
-			<forms-monaco-editor name="text" label="Message Text" />
+			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
@@ -19,12 +19,7 @@
 			>
 				Fetch webhook message content from Discord
 			</button>
-			<forms-select
-				name="role"
-				label="Optionally choose a role to mention"
-				addNewOptionHref="/configure/roles"
-				:options="rolesStorage.roles"
-			/>
+			<forms-select name="role" label="Optionally choose a role to mention" addNewOptionHref="/configure/roles" :options="rolesStorage.roles" />
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 				<button type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
 				<button type="submit" class="btn-shadow btn-primary btn" :disabled="isSubmitting || !meta.dirty || !meta.valid">Review post</button>

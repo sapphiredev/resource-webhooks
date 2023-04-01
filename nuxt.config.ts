@@ -66,7 +66,6 @@ export default defineNuxtConfig({
 	modules: [
 		'@vueuse/nuxt',
 		'@nuxtjs/tailwindcss',
-		'nuxt-monaco-editor',
 		'@tailvue/nuxt',
 		'@vite-pwa/nuxt',
 		'@pinia/nuxt',
