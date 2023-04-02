@@ -1,20 +1,22 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
-		<form @submit="onSubmit">
+		<form @submit="onSubmit" class="flex flex-col">
 			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
 			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
 				addNewOptionHref="/configure/webhooks"
-				:options="webhookStorage.webhooks"
 				class="py-2 lg:py-6"
+				:options="webhookStorage.webhooks"
+				:required="true"
 			/>
 			<forms-select
 				name="role"
 				label="Optionally choose a role to mention"
 				addNewOptionHref="/configure/roles"
 				:options="rolesStorage.roles"
+				:required="false"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 				<button type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
