@@ -16,7 +16,7 @@
 				{{ option.label + ' - ' + option.value }}
 			</option>
 
-			<forms-error-message :name="name" :errorMessage="!!errorMessage" />
+			<forms-error-message :name="name" :hasErrorMessage="!!errorMessage" />
 		</select>
 	</div>
 </template>

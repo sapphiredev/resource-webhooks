@@ -5,7 +5,7 @@
 		</label>
 		<input v-model="value" type="text" class="input-bordered input w-full shadow-md" :class="{ 'input-error': !!errorMessage }" />
 		<label class="label">
-			<forms-error-message :name="name" :errorMessage="!!errorMessage" />
+			<forms-error-message :name="name" :hasErrorMessage="!!errorMessage" />
 		</label>
 	</div>
 </template>
