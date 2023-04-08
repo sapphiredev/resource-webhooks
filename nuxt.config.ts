@@ -63,14 +63,7 @@ export default defineNuxtConfig({
 			isCustomElement: (tag) => tag.startsWith('discord-')
 		}
 	},
-	modules: [
-		'@vueuse/nuxt',
-		'@nuxtjs/tailwindcss',
-		'@tailvue/nuxt',
-		'@vite-pwa/nuxt',
-		'@pinia/nuxt',
-		'@pinia-plugin-persistedstate/nuxt'
-	],
+	modules: ['@vueuse/nuxt', '@nuxtjs/tailwindcss', '@tailvue/nuxt', '@vite-pwa/nuxt', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
 	build: { transpile: ['vee-validate'] },
 	typescript: {
 		shim: false

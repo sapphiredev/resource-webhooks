@@ -1,5 +1,5 @@
 <template>
-	<div v-if="isLoadingIndicator" role="presentation" class="fixed z-[1200] block h-full w-full bg-slate-200 opacity-75 dark:bg-zinc-950">
+	<div v-if="isLoadingIndicator" role="presentation" class="fixed z-[1200] block h-full w-full bg-base-300 opacity-75">
 		<div class="absolute left-1/2 top-1/2 z-[1200]">
 			<div
 				class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"

@@ -1,6 +1,7 @@
 export default {
 	plugins: [require('daisyui')],
 	content: ['node_modules/tailvue/dist/tailvue.es.js'],
+	darkMode: ['class', '[data-theme="dark"]'],
 	daisyui: {
 		themes: [
 			{

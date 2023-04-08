@@ -10,7 +10,7 @@
 				</span>
 			</span>
 		</label>
-		<select class="max-x-ws select w-full" :disabled="options.length === 0" v-model="value">
+		<select class="max-x-ws select w-full shadow-md" :disabled="options.length === 0" v-model="value">
 			<option :disabled="required" selected value="">None</option>
 			<option v-for="option in options" :key="option.value" :value="option" :selected="value && value.value === option.value">
 				{{ option.label + ' - ' + option.value }}

@@ -3,7 +3,12 @@
 		<label class="label">
 			<span class="label-text">{{ label }}</span>
 		</label>
-		<textarea v-model="value" type="text" class="textarea-bordered textarea h-full" :class="{ 'input-error': !!errorMessage }" />
+		<textarea
+			v-model="value"
+			type="text"
+			class="textarea-bordered textarea h-full font-mono shadow-md"
+			:class="{ 'input-error': !!errorMessage }"
+		/>
 		<label class="label">
 			<forms-error-message :name="name" :errorMessage="!!errorMessage" />
 		</label>

@@ -6,7 +6,7 @@
 	html,
 	body,
 	footer {
-		@apply bg-slate-50 text-gray-900 dark:bg-zinc-800 dark:text-gray-200;
+		@apply bg-base-200 dark:bg-base-300;
 	}
 
 	body {

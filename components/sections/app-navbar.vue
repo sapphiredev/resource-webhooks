@@ -1,5 +1,5 @@
 <template>
-	<nav class="navbar sticky top-0 z-20 bg-slate-50 dark:bg-base-100">
+	<nav class="navbar sticky top-0 z-20 rounded-md bg-base-100 shadow-md dark:bg-base-200">
 		<div class="navbar-start flex items-center">
 			<div class="dropdown">
 				<label tabindex="0" class="btn-ghost btn lg:hidden" @click="toggleOpenDropdown">
@@ -25,9 +25,12 @@
 					</li>
 				</ul>
 			</div>
-			<nuxt-link to="/" class="btn-ghost btn flex items-center justify-start text-xl normal-case"
-				><img src="/images/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span></nuxt-link
-			>
+			<nuxt-link to="/" class="btn-ghost btn flex items-center justify-start text-xl normal-case">
+				<img src="/images/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span>
+			</nuxt-link>
+		</div>
+		<div class="navbar-end lg:hidden">
+			<theme-button />
 		</div>
 		<div class="navbar-end hidden w-full lg:flex">
 			<ul class="menu menu-horizontal px-1">
@@ -45,6 +48,9 @@
 				</li>
 				<li>
 					<nuxt-link class="btn-ghost btn mx-1 normal-case" to="/configure/roles">Configure Roles</nuxt-link>
+				</li>
+				<li>
+					<theme-button />
 				</li>
 			</ul>
 		</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="h-full pb-20" @click="closeDropdownIfOpen">
+	<div class="h-full px-2 py-2 pb-20" @click="closeDropdownIfOpen">
 		<nuxt-loading-indicator />
 		<div class="grid-layout grid min-h-full">
 			<sections-app-navbar />
