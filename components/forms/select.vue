@@ -5,7 +5,9 @@
 				{{ label }}
 				<span v-if="options.length === 0">
 					<span class="font-bold text-error">
-						<nuxt-link class="link-secondary link" :to="addNewOptionHref">configuration page</nuxt-link>
+						<nuxt-link :aria-label="`Go to configuration page for ${label}`" class="link-secondary link" :to="addNewOptionHref"
+							>configuration page</nuxt-link
+						>
 					</span>
 				</span>
 			</span>

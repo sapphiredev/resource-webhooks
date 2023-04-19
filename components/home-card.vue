@@ -4,8 +4,10 @@
 			<h2 class="card-title">{{ title }}</h2>
 			<p>{{ description }}</p>
 			<div class="card-actions justify-end">
-				<nuxt-link :to="href">
-					<button class="btn-primary btn min-w-[10rem] normal-case">{{ btnText }}</button>
+				<nuxt-link :aria-label="`Link to ${title}`" :to="href">
+					<button :aria-label="`Button for going to the ${title} page`" class="btn-primary btn min-w-[10rem] normal-case">
+						{{ btnText }}
+					</button>
 				</nuxt-link>
 			</div>
 		</div>

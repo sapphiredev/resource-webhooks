@@ -8,7 +8,9 @@
 			</div>
 			<div v-else-if="error || !data">
 				An error occurred fetching the webhook profile. Please contact the Sapphire developers by joining
-				<nuxt-link class="link-secondary link" to="https://discord.gg/sapphiredev" target="_blank">the official Sapphire server</nuxt-link>
+				<nuxt-link aria-label="Join Sapphire Discord Server" class="link-secondary link" to="https://discord.gg/sapphiredev" target="_blank"
+					>the official Sapphire server</nuxt-link
+				>
 			</div>
 			<div v-else>
 				<discord-messages>
@@ -26,8 +28,16 @@
 				</discord-messages>
 			</div>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button type="button" class="btn-error btn" @click="emits('close-modal')">Cancel</button>
-				<button v-show="!pending && !error && data !== null" type="button" class="btn-primary btn" @click="handleConfirm">Confirm</button>
+				<button aria-label="Cancel" type="button" class="btn-error btn" @click="emits('close-modal')">Cancel</button>
+				<button
+					aria-label="Confirm and post"
+					v-show="!pending && !error && data !== null"
+					type="button"
+					class="btn-primary btn"
+					@click="handleConfirm"
+				>
+					Confirm
+				</button>
 			</div>
 		</div>
 	</div>

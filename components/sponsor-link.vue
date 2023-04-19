@@ -1,9 +1,9 @@
 <template>
-	<nuxt-link :to="href" target="_blank">
+	<nuxt-link :aria-label="`Sponsor link to ${title}`" :to="href" target="_blank">
 		<slot></slot>
 	</nuxt-link>
 </template>
 
 <script setup lang="ts">
-defineProps<{ href: string }>();
+defineProps<{ title: string; href: string }>();
 </script>

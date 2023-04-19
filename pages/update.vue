@@ -28,8 +28,15 @@
 				:required="false"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
-				<button type="submit" class="btn-shadow btn-primary btn" :disabled="isSubmitting || !meta.dirty || !meta.valid">Review post</button>
+				<button aria-label="Reset form" type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
+				<button
+					aria-label="Review post"
+					type="submit"
+					class="btn-shadow btn-primary btn"
+					:disabled="isSubmitting || !meta.dirty || !meta.valid"
+				>
+					Review post
+				</button>
 			</div>
 		</form>
 	</div>

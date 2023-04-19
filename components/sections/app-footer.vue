@@ -6,12 +6,12 @@
 					Copyright © 2022 The Sapphire Community and its contributors
 				</p>
 
-				<sponsor-link href="https://vercel.com/?utm_source=sapphiredev&utm_campaign=oss" class="mr-2">
-					<img src="/images/powered-by-vercel.svg" style="height: 40px" />
+				<sponsor-link href="https://vercel.com/?utm_source=sapphiredev&utm_campaign=oss" title="Vercel" class="mr-2">
+					<img alt="Logo Vercel" src="/images/powered-by-vercel.svg" style="height: 40px" />
 				</sponsor-link>
 
-				<sponsor-link href="https://polypane.app/">
-					<img src="/images/powered-by-polypane.svg" style="height: 40px" />
+				<sponsor-link href="https://polypane.app/" title="Polypane">
+					<img alt="Logo Polypane" src="/images/powered-by-polypane.svg" style="height: 40px" />
 				</sponsor-link>
 			</div>
 		</div>
