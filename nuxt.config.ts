@@ -113,7 +113,7 @@ export default defineNuxtConfig({
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1',
 			title: 'Webhook Dashboard',
-			htmlAttrs: { lang: 'en_GB' },
+			htmlAttrs: { lang: 'en-GB' },
 			link: [
 				{ rel: 'alternate', href: 'https://webhooks.sapphirejs.dev' },
 				{ rel: 'canonical', href: 'https://webhooks.sapphirejs.dev' },
