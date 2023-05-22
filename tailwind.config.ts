@@ -1,4 +1,6 @@
-export default {
+import type { Config } from 'tailwindcss';
+
+export default <Partial<Config>>{
 	plugins: [require('daisyui')],
 	content: ['node_modules/tailvue/dist/tailvue.es.js'],
 	darkMode: ['class', '[data-theme="dark"]'],
