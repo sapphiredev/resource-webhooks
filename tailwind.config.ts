@@ -8,7 +8,7 @@ export default <Partial<Config>>{
 		themes: [
 			{
 				dark: {
-					...require('daisyui/src/colors/themes')['[data-theme=dark]'],
+					...require('daisyui/src/theming/themes')['[data-theme=dark]'],
 					primary: '#0F52BA',
 					secondary: '#57B8FF',
 					accent: '#F4D58D',
@@ -21,7 +21,7 @@ export default <Partial<Config>>{
 			},
 			{
 				light: {
-					...require('daisyui/src/colors/themes')['[data-theme=light]'],
+					...require('daisyui/src/theming/themes')['[data-theme=light]'],
 					primary: '#0F52BA',
 					secondary: '#57B8FF',
 					accent: '#F4D58D',

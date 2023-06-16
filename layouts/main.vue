@@ -1,5 +1,5 @@
 <template>
-	<div class="h-full px-2 py-2 pb-20" @click="closeDropdownIfOpen">
+	<div class="h-full px-2 py-2 pb-20">
 		<nuxt-loading-indicator />
 		<div class="grid-layout grid min-h-full">
 			<sections-app-navbar />
@@ -12,16 +12,3 @@
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts">
-const openDropdown = useOpenDropdown();
-const prevValue = useState<boolean | null>('prev-value', () => null);
-
-function closeDropdownIfOpen() {
-	if ((prevValue === null && openDropdown.value) || (prevValue.value && openDropdown.value)) {
-		openDropdown.value = false;
-	}
-
-	prevValue.value = openDropdown.value;
-}
-</script>

@@ -1,12 +1,12 @@
 <template>
 	<div class="container mx-auto h-full px-5">
-		<modals-webhook :webhooks="webhookStorage.webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
-		<button aria-label="Add new webhook" class="btn-shadow btn-primary btn my-5 w-full gap-2" @click="openModal = ''">
+		<modals-webhook ref="webhookDialog" :webhooks="webhookStorage.webhooks" :webhook="null" action="add" />
+		<button aria-label="Add new webhook" class="btn-shadow btn-primary btn my-5 w-full gap-2" @click="webhookDialog?.showModal()">
 			<hero-icons-plus class="h-6 w-6" />
 			Add new webhook
 		</button>
 		<div class="overflow-x-auto shadow-md">
-			<table class="table-zebra table w-full">
+			<table class="table-pin-rows table-zebra table w-full">
 				<thead>
 					<tr>
 						<th>Actions</th>
@@ -22,7 +22,7 @@
 					<tr v-for="webhook in webhookStorage.webhooks" :key="webhook.value" class="hover">
 						<td>
 							<div class="tooltip-custom" data-tip="Update webhook">
-								<button aria-label="Edit webhook" class="btn-primary btn-sm btn-circle btn mr-3" @click="openModal = webhook.value">
+								<button aria-label="Edit webhook" class="btn-primary btn-sm btn-circle btn mr-3" @click="webhookDialog?.showModal()">
 									<hero-icons-pencil class="h-4 w-4" />
 								</button>
 							</div>
@@ -40,20 +40,14 @@
 							<nuxt-link
 								:to="webhook.value"
 								target="_blank"
-								class="link tooltip tooltip-info"
+								class="link tooltip-info tooltip"
 								data-tip="Use 'Copy Link Address' to copy the webhook URL"
 								aria-label="Webhook URL"
 							>
 								{{ webhook.label }}
 							</nuxt-link>
 						</td>
-						<modals-webhook
-							:webhooks="webhookStorage.webhooks"
-							:webhook="webhook"
-							action="edit"
-							@close-modal="openModal = null"
-							v-if="openModal === webhook.value"
-						/>
+						<modals-webhook :webhooks="webhookStorage.webhooks" :webhook="webhook" action="edit" />
 					</tr>
 				</tbody>
 			</table>
@@ -62,6 +56,6 @@
 </template>
 
 <script setup lang="ts">
-const openModal = useOpenModal();
 const webhookStorage = useWebhooks();
+const webhookDialog = ref<HTMLDialogElement | null>(null);
 </script>

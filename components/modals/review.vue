@@ -1,9 +1,9 @@
 <template>
-	<div class="modal">
+	<dialog ref="reviewDialog" class="modal" @click="$event.target === reviewDialog && reviewDialog?.close()">
 		<div class="modal-box relative min-w-full">
 			<div v-if="pending">
 				<div class="flex items-center justify-center">
-					<progress class="progress progress-primary w-1/3"></progress>
+					<progress class="progress-primary progress w-1/3"></progress>
 				</div>
 			</div>
 			<div v-else-if="error || !data">
@@ -28,7 +28,7 @@
 				</discord-messages>
 			</div>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button aria-label="Cancel" type="button" class="btn-error btn" @click="emits('close-modal')">Cancel</button>
+				<button aria-label="Cancel" type="button" class="btn-error btn" @click="reviewDialog?.close()">Cancel</button>
 				<button
 					aria-label="Confirm and post"
 					v-show="!pending && !error && data !== null"
@@ -40,7 +40,7 @@
 				</button>
 			</div>
 		</div>
-	</div>
+	</dialog>
 </template>
 
 <script setup lang="ts">
@@ -50,10 +50,15 @@ import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
 import { Post } from '~~/lib/types/Post';
 import { markdownToHtml } from '~~/lib/utils/MarkdownToHTML';
 
-const emits = defineEmits(['close-modal', 'reset-form']);
+const reviewDialog = ref<HTMLDialogElement|null>(null);
+
+defineExpose({ showModal: () => reviewDialog.value?.showModal() });
+
+const emits = defineEmits(['reset-form']);
 const props = defineProps<{ values: Post; isEditing: boolean }>();
 
 const { data, pending, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
+
 const loadingIndicator = useLoadingIndicator();
 const { $toast } = useNuxtApp();
 
@@ -73,7 +78,7 @@ async function handleConfirm() {
 		await sendWebhookMessage(props.values, props.isEditing ? 'update' : 'post');
 
 		emits('reset-form');
-		emits('close-modal');
+		reviewDialog.value?.close();
 
 		$toast.show({
 			type: 'success',

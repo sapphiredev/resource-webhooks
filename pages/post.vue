@@ -1,7 +1,7 @@
 <template>
+	<modals-review ref="reviewDialog" :values="values" :is-editing="false" @reset-form="resetForm()" />
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit" class="flex flex-col">
-			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
 			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
@@ -38,9 +38,10 @@ import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from '
 import { postSchema } from '~~/lib/schemas/postSchema';
 import { Post } from '~~/lib/types/Post';
 
+const reviewDialog = ref<HTMLDialogElement | null>(null);
+
 const rolesStorage = useRoles();
 const webhookStorage = useWebhooks();
-const openModal = useOpenModal();
 const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 	initialValues: {
 		webhookUrl: null,
@@ -51,7 +52,7 @@ const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 });
 
 const onInvalidSubmit: InvalidSubmissionHandler<Post> = ({ errors }) => useInvalidFormSubmit(errors);
-const onSuccessfulSubmit: SubmissionHandler<Post> = () => (openModal.value = '');
+const onSuccessfulSubmit: SubmissionHandler<Post> = () => reviewDialog.value?.showModal();
 
 const onSubmit = handleSubmit(onSuccessfulSubmit, onInvalidSubmit);
 </script>

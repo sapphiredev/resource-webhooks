@@ -1,7 +1,7 @@
 <template>
+	<modals-review ref="reviewDialog" :values="values" :is-editing="true" @reset-form="resetForm()" />
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form @submit="onSubmit" class="flex flex-col">
-			<modals-review :values="values" :is-editing="true" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
 			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
@@ -48,9 +48,10 @@ import { fetchWebhookMessage } from '~~/lib/api/FetchWebhookMessage';
 import { updateSchema } from '~~/lib/schemas/updateSchema';
 import { Update } from '~~/lib/types/Update';
 
+const reviewDialog = ref<HTMLDialogElement | null>(null);
+
 const rolesStorage = useRoles();
 const webhookStorage = useWebhooks();
-const openModal = useOpenModal();
 const { handleSubmit, resetForm, isSubmitting, meta, values, setFieldValue } = useForm<Update>({
 	initialValues: {
 		webhookUrl: null,
@@ -65,7 +66,7 @@ const loadingIndicator = useLoadingIndicator();
 const { $toast } = useNuxtApp();
 
 const onInvalidSubmit: InvalidSubmissionHandler<Update> = ({ errors }) => useInvalidFormSubmit(errors);
-const onSuccessfulSubmit: SubmissionHandler<Update> = () => (openModal.value = '');
+const onSuccessfulSubmit: SubmissionHandler<Update> = () => reviewDialog.value?.showModal();
 
 const onSubmit = handleSubmit(onSuccessfulSubmit, onInvalidSubmit);
 
