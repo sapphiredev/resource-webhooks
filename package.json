@@ -28,7 +28,7 @@
 		"@vueuse/nuxt": "^9.13.0",
 		"daisyui": "^2.51.5",
 		"discord-api-types": "^0.37.37",
-		"nuxt": "3.3.3",
+		"nuxt": "3.4.3",
 		"pinia": "^2.0.34",
 		"prettier": "^2.8.7",
 		"prettier-plugin-tailwindcss": "^0.2.7",
