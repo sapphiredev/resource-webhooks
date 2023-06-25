@@ -6,9 +6,13 @@
 
 **Webhook frontend UI to send webhook based messages to Discord, built with Nuxt**
 
+| [Click here to go to the production website][prod] |
+| -------------------------------------------------- |
+
 [![GitHub](https://img.shields.io/github/license/sapphiredev/resource-webhooks)](https://github.com/sapphiredev/resource-webhooks/blob/main/LICENSE.md)
 
 [![Support Server](https://discord.com/api/guilds/737141877803057244/embed.png?style=banner2)](https://sapphirejs.dev/discord)
+
 
 </div>
 
@@ -38,3 +42,4 @@ Thank you to all the people who already contributed to Sapphire!
 </a>
 
 [contributing]: https://github.com/sapphiredev/.github/blob/main/.github/CONTRIBUTING.md
+[prod]: https://webhooks.sapphirejs.dev
