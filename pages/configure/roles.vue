@@ -6,7 +6,7 @@
 			Add new role
 		</button>
 		<div class="overflow-x-auto shadow-md">
-			<table class="table-zebra table w-full">
+			<table class="table-pin-rows table-zebra table w-full">
 				<thead>
 					<tr>
 						<th>Actions</th>
@@ -37,7 +37,7 @@
 							</div>
 						</td>
 						<td>
-							<span class="tooltip tooltip-info" :data-tip="role.value">{{ role.label }}</span>
+							<span class="tooltip-info tooltip" :data-tip="role.value">{{ role.label }}</span>
 						</td>
 						<modals-role
 							:roles="rolesStorage.roles"

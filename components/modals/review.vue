@@ -1,9 +1,9 @@
 <template>
-	<div class="modal">
+	<dialog class="modal">
 		<div class="modal-box relative min-w-full">
 			<div v-if="pending">
 				<div class="flex items-center justify-center">
-					<progress class="progress progress-primary w-1/3"></progress>
+					<progress class="progress-primary progress w-1/3"></progress>
 				</div>
 			</div>
 			<div v-else-if="error || !data">
@@ -40,14 +40,14 @@
 				</button>
 			</div>
 		</div>
-	</div>
+	</dialog>
 </template>
 
 <script setup lang="ts">
 import { bold } from '@discordjs/formatters';
 import { fetchWebhookProfile } from '~~/lib/api/FetchWebhookProfile';
 import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
-import { Post } from '~~/lib/types/Post';
+import type { Post } from '~~/lib/types/Post';
 import { markdownToHtml } from '~~/lib/utils/MarkdownToHTML';
 
 const emits = defineEmits(['close-modal', 'reset-form']);

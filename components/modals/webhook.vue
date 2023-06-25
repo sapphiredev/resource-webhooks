@@ -1,22 +1,20 @@
 <template>
-	<div class="modal">
-		<div class="modal-box relative">
-			<form @submit="onSubmit">
-				<button aria-label="Close popup" class="btn-sm btn-circle btn absolute right-2 top-2" @click="handleClose(resetForm)">
-					<hero-icons-x />
+	<dialog class="modal">
+		<form method="dialog" @submit="onSubmit" class="modal-box relative">
+			<button aria-label="Close popup" class="btn-sm btn-circle btn absolute right-2 top-2" @click="handleClose(resetForm)">
+				<hero-icons-x />
+			</button>
+			<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new Webhook URL' : 'Update Webhook URL' }}</h3>
+			<forms-input name="label" label="Label" />
+			<forms-input name="value" label="Webhook URL" />
+			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
+				<button aria-label="Reset inputs" type="button" class="btn-accent btn" @click="resetForm()">Reset form</button>
+				<button aria-label="Add webhook" type="submit" class="btn-primary btn" :disabled="isSubmitting || !meta.valid">
+					{{ action === 'add' ? 'Add Webhook URL' : 'Update Webhook URL' }}
 				</button>
-				<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new Webhook URL' : 'Update Webhook URL' }}</h3>
-				<forms-input name="label" label="Label" />
-				<forms-input name="value" label="Webhook URL" />
-				<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-					<button aria-label="Reset inputs" type="button" class="btn-accent btn" @click="resetForm()">Reset form</button>
-					<button aria-label="Add webhook" type="submit" class="btn-primary btn" :disabled="isSubmitting || !meta.valid">
-						{{ action === 'add' ? 'Add Webhook URL' : 'Update Webhook URL' }}
-					</button>
-				</div>
-			</form>
-		</div>
-	</div>
+			</div>
+		</form>
+	</dialog>
 </template>
 
 <script setup lang="ts">

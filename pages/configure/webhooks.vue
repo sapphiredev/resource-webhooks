@@ -6,7 +6,7 @@
 			Add new webhook
 		</button>
 		<div class="overflow-x-auto shadow-md">
-			<table class="table-zebra table w-full">
+			<table class="table-pin-rows table-zebra table w-full">
 				<thead>
 					<tr>
 						<th>Actions</th>
@@ -40,7 +40,7 @@
 							<nuxt-link
 								:to="webhook.value"
 								target="_blank"
-								class="link tooltip tooltip-info"
+								class="link tooltip-info tooltip"
 								data-tip="Use 'Copy Link Address' to copy the webhook URL"
 								aria-label="Webhook URL"
 							>
