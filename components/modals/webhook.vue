@@ -1,7 +1,7 @@
 <template>
-	<dialog class="modal" ref="webhookDialog" @click="$event.target === webhookDialog && webhookDialog?.close()">
+	<dialog class="modal">
 		<form method="dialog" @submit="onSubmit" class="modal-box relative">
-			<button id="webhook-modal-close-button" aria-label="Close popup" class="btn-sm btn-circle btn absolute right-2 top-2">
+			<button aria-label="Close popup" class="btn-sm btn-circle btn absolute right-2 top-2" @click="handleClose(resetForm)">
 				<hero-icons-x />
 			</button>
 			<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new Webhook URL' : 'Update Webhook URL' }}</h3>
@@ -22,11 +22,8 @@ import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from '
 import { addOrEditWebhookSchema } from '~~/lib/schemas/addOrEditWebhookSchema';
 import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
-defineExpose({ showModal: () => webhookDialog.value?.showModal() });
-
+const emit = defineEmits(['close-modal']);
 const props = defineProps<{ webhooks: PersistedStorageEntry[]; webhook: PersistedStorageEntry | null; action: 'add' | 'edit' }>();
-
-const webhookDialog = ref<HTMLDialogElement | null>(null);
 
 const { handleSubmit, resetForm, isSubmitting, meta } = useForm<PersistedStorageEntry>({
 	initialValues: {
@@ -36,19 +33,13 @@ const { handleSubmit, resetForm, isSubmitting, meta } = useForm<PersistedStorage
 	validationSchema: addOrEditWebhookSchema(props.action === 'edit')
 });
 
-function handleClose() {
-	resetForm();
-	webhookDialog.value?.close();
+function handleClose(resetForm?: () => void) {
+	resetForm?.();
+	emit('close-modal');
 }
 
-const onInvalidSubmit: InvalidSubmissionHandler<PersistedStorageEntry> = ({ errors, evt }) => {
-	if ((evt as SubmitEvent).submitter?.id === 'webhook-modal-close-button') return handleClose();
-	return useInvalidFormSubmit(errors);
-};
-
-const onSuccessfulSubmit: SubmissionHandler<PersistedStorageEntry> = (values, { evt }) => {
-	if ((evt as SubmitEvent).submitter?.id === 'webhook-modal-close-button') return handleClose();
-
+const onInvalidSubmit: InvalidSubmissionHandler<PersistedStorageEntry> = ({ errors }) => useInvalidFormSubmit(errors);
+const onSuccessfulSubmit: SubmissionHandler<PersistedStorageEntry> = (values) => {
 	if (props.action === 'add') {
 		props.webhooks.push(values);
 	} else {

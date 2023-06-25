@@ -1,7 +1,7 @@
 <template>
 	<div class="container mx-auto h-full px-5">
-		<modals-role ref="roleDialog" :roles="rolesStorage.roles" :role="null" action="add" />
-		<button aria-label="Add new role" class="btn-shadow btn-primary btn my-5 w-full gap-2" @click="roleDialog?.showModal()">
+		<modals-role :roles="rolesStorage.roles" :role="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
+		<button aria-label="Add new role" class="btn-shadow btn-primary btn my-5 w-full gap-2" @click="openModal = ''">
 			<hero-icons-plus class="h-6 w-6" />
 			Add new role
 		</button>
@@ -22,7 +22,7 @@
 					<tr v-for="role in rolesStorage.roles" :key="role.value" class="hover">
 						<td>
 							<div class="tooltip-custom" data-tip="Update role">
-								<button aria-label="Edit role" class="btn-primary btn-sm btn-circle btn mr-3" @click="roleDialog?.showModal()">
+								<button aria-label="Edit role" class="btn-primary btn-sm btn-circle btn mr-3" @click="openModal = role.value">
 									<hero-icons-pencil class="h-4 w-4" />
 								</button>
 							</div>
@@ -39,7 +39,13 @@
 						<td>
 							<span class="tooltip-info tooltip" :data-tip="role.value">{{ role.label }}</span>
 						</td>
-						<lazy-modals-role :roles="rolesStorage.roles" ref="roleDialog" :role="role" action="edit" />
+						<modals-role
+							:roles="rolesStorage.roles"
+							:role="role"
+							action="edit"
+							@close-modal="openModal = null"
+							v-if="openModal === role.value"
+						/>
 					</tr>
 				</tbody>
 			</table>
@@ -48,6 +54,6 @@
 </template>
 
 <script setup lang="ts">
+const openModal = useOpenModal();
 const rolesStorage = useRoles();
-const roleDialog = ref<HTMLDialogElement | null>(null);
 </script>

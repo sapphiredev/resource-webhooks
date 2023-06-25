@@ -1,7 +1,7 @@
 <template>
 	<div class="container mx-auto h-full px-5">
-		<modals-webhook ref="webhookDialog" :webhooks="webhookStorage.webhooks" :webhook="null" action="add" />
-		<button aria-label="Add new webhook" class="btn-shadow btn-primary btn my-5 w-full gap-2" @click="webhookDialog?.showModal()">
+		<modals-webhook :webhooks="webhookStorage.webhooks" :webhook="null" action="add" @close-modal="openModal = null" v-if="openModal === ''" />
+		<button aria-label="Add new webhook" class="btn-shadow btn-primary btn my-5 w-full gap-2" @click="openModal = ''">
 			<hero-icons-plus class="h-6 w-6" />
 			Add new webhook
 		</button>
@@ -22,7 +22,7 @@
 					<tr v-for="webhook in webhookStorage.webhooks" :key="webhook.value" class="hover">
 						<td>
 							<div class="tooltip-custom" data-tip="Update webhook">
-								<button aria-label="Edit webhook" class="btn-primary btn-sm btn-circle btn mr-3" @click="webhookDialog?.showModal()">
+								<button aria-label="Edit webhook" class="btn-primary btn-sm btn-circle btn mr-3" @click="openModal = webhook.value">
 									<hero-icons-pencil class="h-4 w-4" />
 								</button>
 							</div>
@@ -47,7 +47,13 @@
 								{{ webhook.label }}
 							</nuxt-link>
 						</td>
-						<modals-webhook :webhooks="webhookStorage.webhooks" :webhook="webhook" action="edit" />
+						<modals-webhook
+							:webhooks="webhookStorage.webhooks"
+							:webhook="webhook"
+							action="edit"
+							@close-modal="openModal = null"
+							v-if="openModal === webhook.value"
+						/>
 					</tr>
 				</tbody>
 			</table>
@@ -56,6 +62,6 @@
 </template>
 
 <script setup lang="ts">
+const openModal = useOpenModal();
 const webhookStorage = useWebhooks();
-const webhookDialog = ref<HTMLDialogElement | null>(null);
 </script>

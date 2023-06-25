@@ -17,6 +17,12 @@
 }
 
 @layer components {
+	dialog {
+		pointer-events: auto;
+		visibility: visible;
+		opacity: 1;
+	}
+
 	.table th:first-child {
 		@apply relative;
 		left: inherit;
@@ -28,6 +34,6 @@
 	}
 
 	.tooltip-custom {
-		@apply tooltip tooltip-right tooltip-info;
+		@apply tooltip-info tooltip tooltip-right;
 	}
 }

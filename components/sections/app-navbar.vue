@@ -58,5 +58,9 @@
 </template>
 
 <script setup lang="ts">
-const mobileMenuDropdown = ref<HTMLDetailsElement | null>(null);
+import type { HTMLDetailsNavbarElement } from '~~/lib/types/HTMLDetailsElement';
+
+const mobileMenuDropdown = ref<HTMLDetailsNavbarElement | null>(null);
+
+defineExpose({ close: () => mobileMenuDropdown.value?.removeAttribute('open') });
 </script>
