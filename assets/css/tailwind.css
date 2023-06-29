@@ -17,7 +17,7 @@
 }
 
 @layer components {
-	dialog {
+	div.modal {
 		pointer-events: auto;
 		visibility: visible;
 		opacity: 1;

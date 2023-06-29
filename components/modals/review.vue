@@ -1,5 +1,5 @@
 <template>
-	<dialog class="modal">
+	<div class="modal">
 		<div class="modal-box relative min-w-full">
 			<div v-if="pending">
 				<div class="flex items-center justify-center">
@@ -40,7 +40,7 @@
 				</button>
 			</div>
 		</div>
-	</dialog>
+	</div>
 </template>
 
 <script setup lang="ts">

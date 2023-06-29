@@ -1,6 +1,6 @@
 <template>
-	<dialog class="modal">
-		<form method="dialog" @submit="onSubmit" class="modal-box relative">
+	<div class="modal">
+		<form @submit="onSubmit" class="modal-box relative">
 			<button aria-label="Close popup" class="btn-sm btn-circle btn absolute right-2 top-2" @click="handleClose(resetForm)">
 				<hero-icons-x />
 			</button>
@@ -14,7 +14,7 @@
 				</button>
 			</div>
 		</form>
-	</dialog>
+	</div>
 </template>
 
 <script setup lang="ts">
