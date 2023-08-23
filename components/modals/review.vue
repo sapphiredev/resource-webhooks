@@ -70,7 +70,10 @@ async function handleConfirm() {
 	try {
 		loadingIndicator.value = true;
 
-		await sendWebhookMessage(props.values, props.isEditing ? 'update' : 'post');
+		await sendWebhookMessage(
+			{ role: props.values.role, text: props.values.text, webhookUrl: props.values.webhookUrl },
+			props.isEditing ? 'update' : 'post'
+		);
 
 		emits('reset-form');
 		emits('close-modal');
