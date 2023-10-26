@@ -104,6 +104,22 @@ export default defineNuxtConfig({
 					url: '/',
 					icons: manifestIcons
 				}
+			],
+			screenshots: [
+				{
+					src: 'https://www.sapphirejs.dev/icons/pwa-richinstall-screenshot-desktop.png',
+					sizes: '1280x640',
+					type: 'image/png',
+					form_factor: 'wide',
+					label: 'Sapphire Webhooks Dashboard'
+				},
+				{
+					src: 'https://www.sapphirejs.dev/icons/pwa-richinstall-screenshot-mobile.png',
+					sizes: '1280x640',
+					type: 'image/png',
+					form_factor: 'narrow',
+					label: 'Sapphire Webhooks Dashboard'
+				}
 			]
 		}
 	},
