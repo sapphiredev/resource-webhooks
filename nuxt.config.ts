@@ -115,7 +115,7 @@ export default defineNuxtConfig({
 				},
 				{
 					src: 'https://webhooks.sapphirejs.dev/icons/pwa-richinstall-screenshot-mobile.png',
-					sizes: '1280x640',
+					sizes: '390x844',
 					type: 'image/png',
 					form_factor: 'narrow',
 					label: 'Sapphire Webhooks Dashboard'
