@@ -88,7 +88,7 @@ export default defineNuxtConfig({
 			categories: ['discord', 'bot', 'framework', 'documentation', 'guide', 'sapphire'],
 			description: 'A webhooks UI to easily send announcements and messages to a Discord server',
 			display: 'minimal-ui',
-			lang: 'en-GB',
+			lang: 'en',
 			name: 'Webhooks Dashboard',
 			orientation: 'portrait-primary',
 			scope: '/',
@@ -128,7 +128,7 @@ export default defineNuxtConfig({
 			charset: 'utf-8',
 			viewport: 'width=device-width, initial-scale=1',
 			title: 'Webhook Dashboard',
-			htmlAttrs: { lang: 'en-GB' },
+			htmlAttrs: { lang: 'en' },
 			link: [
 				{ rel: 'alternate', href: 'https://webhooks.sapphirejs.dev' },
 				{ rel: 'canonical', href: 'https://webhooks.sapphirejs.dev' },
