@@ -1,5 +1,5 @@
-import { RESTGetAPIChannelMessageResult, RouteBases, Routes } from 'discord-api-types/v10';
-import { Update } from '~~/lib/types/Update';
+import { RouteBases, Routes, type RESTGetAPIChannelMessageResult } from 'discord-api-types/v10';
+import type { Update } from '~~/lib/types/Update';
 
 export async function fetchWebhookMessage(updateData: Update): Promise<string | null> {
 	if (!updateData.webhookUrl) return null;

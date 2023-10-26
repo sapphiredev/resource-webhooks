@@ -1,8 +1,8 @@
 import { bold, roleMention } from '@discordjs/formatters';
 import { promiseTimeout } from '@vueuse/shared';
 import { RouteBases, Routes, type RESTPostAPIChannelMessageResult, type RESTPostAPIWebhookWithTokenJSONBody } from 'discord-api-types/rest/v10';
-import { Post } from '~~/lib/types/Post';
-import { Update } from '~~/lib/types/Update';
+import type { Post } from '~~/lib/types/Post';
+import type { Update } from '~~/lib/types/Update';
 
 const SapphireServerId = '737141877803057244';
 const jumpRegex = /%JUMP_TO_TOP%/gm;

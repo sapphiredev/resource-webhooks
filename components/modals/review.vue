@@ -45,13 +45,14 @@
 
 <script setup lang="ts">
 import { bold } from '@discordjs/formatters';
+import type { Update } from '~/lib/types/Update';
 import { fetchWebhookProfile } from '~~/lib/api/FetchWebhookProfile';
 import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
 import type { Post } from '~~/lib/types/Post';
 import { markdownToHtml } from '~~/lib/utils/MarkdownToHTML';
 
 const emits = defineEmits(['close-modal', 'reset-form']);
-const props = defineProps<{ values: Post; isEditing: boolean }>();
+const props = defineProps<{ values: Post | Update; isEditing: boolean }>();
 
 const { data, pending, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
 const loadingIndicator = useLoadingIndicator();
@@ -71,7 +72,7 @@ async function handleConfirm() {
 		loadingIndicator.value = true;
 
 		await sendWebhookMessage(
-			{ role: props.values.role, text: props.values.text, webhookUrl: props.values.webhookUrl },
+			{ role: props.values.role, text: props.values.text, webhookUrl: props.values.webhookUrl, messageId: (props.values as Update).messageId },
 			props.isEditing ? 'update' : 'post'
 		);
 

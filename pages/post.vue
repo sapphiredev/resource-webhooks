@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
-import { Post } from '~~/lib/types/Post';
+import type { Post } from '~~/lib/types/Post';
 
 const rolesStorage = useRoles();
 const webhookStorage = useWebhooks();

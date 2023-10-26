@@ -46,7 +46,7 @@
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { fetchWebhookMessage } from '~~/lib/api/FetchWebhookMessage';
 import { updateSchema } from '~~/lib/schemas/updateSchema';
-import { Update } from '~~/lib/types/Update';
+import type { Update } from '~~/lib/types/Update';
 
 const rolesStorage = useRoles();
 const webhookStorage = useWebhooks();
