@@ -26,7 +26,7 @@
 				</ul>
 			</details>
 			<nuxt-link to="/" class="btn-ghost btn flex items-center justify-start text-xl normal-case">
-				<img alt="Sapphire Logo" src="/images/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span>
+				<img alt="Sapphire Logo" src="/icons/gem.svg" style="height: 24px" /><span class="ml-2">Sapphire</span>
 			</nuxt-link>
 		</div>
 		<div class="navbar-end lg:hidden">

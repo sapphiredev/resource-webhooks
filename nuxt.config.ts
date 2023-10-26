@@ -4,47 +4,47 @@ import 'nuxt';
 
 const manifestIcons = [
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-36x36.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-36x36.png',
 		sizes: '36x36',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-48x48.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-48x48.png',
 		sizes: '48x48',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-72x72.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-72x72.png',
 		sizes: '72x72',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-96x96.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-96x96.png',
 		sizes: '96x96',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-144x144.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-144x144.png',
 		sizes: '144x144',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-192x192.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-192x192.png',
 		sizes: '192x192',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-256x256.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-256x256.png',
 		sizes: '256x256',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-384x384.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-384x384.png',
 		sizes: '384x384',
 		type: 'image/png'
 	},
 	{
-		src: 'https://www.sapphirejs.dev/favicons/android-chrome-512x512.png',
+		src: 'https://www.sapphirejs.dev/icons/android-chrome-512x512.png',
 		sizes: '512x512',
 		type: 'image/png'
 	}
@@ -107,14 +107,14 @@ export default defineNuxtConfig({
 			],
 			screenshots: [
 				{
-					src: 'https://www.sapphirejs.dev/favicons/pwa-richinstall-screenshot-desktop.png',
+					src: 'https://www.sapphirejs.dev/icons/pwa-richinstall-screenshot-desktop.png',
 					sizes: '1280x640',
 					type: 'image/png',
 					form_factor: 'wide',
 					label: 'Sapphire Webhooks Dashboard'
 				},
 				{
-					src: 'https://www.sapphirejs.dev/favicons/pwa-richinstall-screenshot-mobile.png',
+					src: 'https://www.sapphirejs.dev/icons/pwa-richinstall-screenshot-mobile.png',
 					sizes: '1280x640',
 					type: 'image/png',
 					form_factor: 'narrow',
@@ -132,14 +132,14 @@ export default defineNuxtConfig({
 			link: [
 				{ rel: 'alternate', href: 'https://webhooks.sapphirejs.dev' },
 				{ rel: 'canonical', href: 'https://webhooks.sapphirejs.dev' },
-				{ rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon.png' },
-				{ rel: 'apple-touch-startup-image', href: '/favicons/apple-startup.png' },
-				{ rel: 'icon', href: '/favicons/android-chrome-192x192.png' },
+				{ rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' },
+				{ rel: 'apple-touch-startup-image', href: '/icons/apple-startup.png' },
+				{ rel: 'icon', href: '/icons/android-chrome-192x192.png' },
 				{ rel: 'icon', href: '/favicon.ico' },
-				{ rel: 'icon', href: '/favicons/favicon-16x16.png' },
-				{ rel: 'icon', href: '/favicons/android-chrome-192x192.png' },
-				{ rel: 'icon', href: '/favicons/favicon-32x32.png' },
-				{ rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg' },
+				{ rel: 'icon', href: '/icons/favicon-16x16.png' },
+				{ rel: 'icon', href: '/icons/android-chrome-192x192.png' },
+				{ rel: 'icon', href: '/icons/favicon-32x32.png' },
+				{ rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg' },
 				{ rel: 'shortcut icon', href: '/favicon.ico' }
 			],
 			meta: [
@@ -165,7 +165,7 @@ export default defineNuxtConfig({
 				{ name: 'keywords', content: 'discord, webhooks, dashboard' },
 				{ name: 'msapplication-config', content: '/browserconfig.xml' },
 				{ name: 'msapplication-TileColor', content: '#23529B' },
-				{ name: 'msapplication-TileImage', content: '/favicons/mstile-144x144.png' },
+				{ name: 'msapplication-TileImage', content: '/icons/mstile-144x144.png' },
 				{ name: 'owner', content: 'Sapphire Community, contact@sapphirejs.dev' },
 				{ name: 'rating', content: 'safe for kids' },
 				{ name: 'reply-to', content: 'contact@sapphirejs.dev' },
@@ -178,7 +178,7 @@ export default defineNuxtConfig({
 				{ name: 'theme-color', content: '#23529B' },
 				{ name: 'twitter:card', content: 'summary' },
 				{ name: 'twitter:creator', content: '@Favna_' },
-				{ name: 'twitter:image', content: 'https://www.sapphirejs.dev/favicons/opengraph.png' },
+				{ name: 'twitter:image', content: 'https://www.sapphirejs.dev/icons/opengraph.png' },
 				{ name: 'twitter:site', content: '@Favna_' },
 				{ name: 'url', content: 'https://webhooks.sapphirejs.dev' },
 				{ property: 'og:description', content: 'A webhooks UI to easily send announcements and messages to a Discord server' },
@@ -186,7 +186,7 @@ export default defineNuxtConfig({
 				{ property: 'og:image:alt', content: 'OpenGraphImage' },
 				{ property: 'og:image:height', content: '512' },
 				{ property: 'og:image:width', content: '1024' },
-				{ property: 'og:image', content: 'https://www.sapphirejs.dev/favicons/opengraph.png' },
+				{ property: 'og:image', content: 'https://www.sapphirejs.dev/icons/opengraph.png' },
 				{ property: 'og:locale', content: 'en_GB' },
 				{ property: 'og:site_name', content: 'Webhook Dashboard' },
 				{ property: 'og:title', content: 'Home | Sapphire' },
