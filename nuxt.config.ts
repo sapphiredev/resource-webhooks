@@ -96,6 +96,7 @@ export default defineNuxtConfig({
 			start_url: '/',
 			theme_color: '#23529B',
 			icons: manifestIcons,
+			dir: 'ltr',
 			shortcuts: [
 				{
 					name: 'Webhooks Dashboard',
