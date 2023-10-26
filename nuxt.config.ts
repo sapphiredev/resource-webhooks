@@ -77,10 +77,7 @@ export default defineNuxtConfig({
 		shim: false
 	},
 	imports: {
-		dirs: ['lib/utils', 'stores']
-	},
-	pinia: {
-		autoImports: ['defineStore', 'acceptHMRUpdate']
+		dirs: ['lib/utils']
 	},
 	nitro: {
 		preset: 'cloudflare-pages'
