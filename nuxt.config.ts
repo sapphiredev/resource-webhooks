@@ -72,7 +72,6 @@ export default defineNuxtConfig({
 	imports: {
 		dirs: ['lib/utils']
 	},
-	experimental: { appManifest: false },
 	nitro: {
 		preset: 'cloudflare-pages'
 	},
