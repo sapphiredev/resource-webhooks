@@ -1417,7 +1417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.22.15, @babel/types@npm:^7.22.19, @babel/types@npm:^7.22.5, @babel/types@npm:^7.23.0, @babel/types@npm:^7.23.5, @babel/types@npm:^7.23.6, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
+"@babel/types@npm:^7.22.15, @babel/types@npm:^7.22.19, @babel/types@npm:^7.22.5, @babel/types@npm:^7.23.0, @babel/types@npm:^7.23.6, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
   version: 7.23.6
   resolution: "@babel/types@npm:7.23.6"
   dependencies:
@@ -1429,11 +1429,11 @@ __metadata:
   linkType: hard
 
 "@cloudflare/kv-asset-handler@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@cloudflare/kv-asset-handler@npm:0.3.0"
+  version: 0.3.1
+  resolution: "@cloudflare/kv-asset-handler@npm:0.3.1"
   dependencies:
     mime: "npm:^3.0.0"
-  checksum: 92a28e39fc1c2efc81b32cecd19ed748e91180cc3854e749b9d1f6c25bb4a10c7ff3a260d3b953de334d9101adad8633274ed84bdd55ebfff1d31114dbbfd803
+  checksum: 4238acf8ecaf61ab2350f686e2a0e4b011b14fe9a657960063c0064557a7c42f39f1c3db4ff01516697466f583b08ac34b16c319f6556385aac3108cc388a23d
   languageName: node
   linkType: hard
 
@@ -1731,12 +1731,12 @@ __metadata:
   linkType: hard
 
 "@jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.9":
-  version: 0.3.21
-  resolution: "@jridgewell/trace-mapping@npm:0.3.21"
+  version: 0.3.22
+  resolution: "@jridgewell/trace-mapping@npm:0.3.22"
   dependencies:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
-  checksum: 925dda0620887e5a24f11b5a3a106f4e8b1a66155b49be6ceee61432174df33a17c243d8a89b2cd79ccebd281d817878759236a2fc42c47325ae9f73dfbfb90d
+  checksum: 48d3e3db00dbecb211613649a1849876ba5544a3f41cf5e6b99ea1130272d6cf18591b5b67389bce20f1c871b4ede5900c3b6446a7aab6d0a3b2fe806a834db7
   languageName: node
   linkType: hard
 
@@ -1789,12 +1789,12 @@ __metadata:
   linkType: hard
 
 "@netlify/functions@npm:^2.4.0":
-  version: 2.5.0
-  resolution: "@netlify/functions@npm:2.5.0"
+  version: 2.5.1
+  resolution: "@netlify/functions@npm:2.5.1"
   dependencies:
     "@netlify/serverless-functions-api": "npm:1.13.0"
     is-promise: "npm:^4.0.0"
-  checksum: 1908ded5e741986f138a7f426b67afb3b74f7389f9f3f3a4d788c942ba1fa21794b9ebda33f3e8646f6fe7e13c09948bece63a406454e46e4bcd118fc11a246d
+  checksum: af192941bd68de4ff409f25e135e5b8ad434e112d7d305f248ef4d727c83cf3f5b6b3f44a702d0eef7dcea155fc83bba958b0b210409e719825086a62c401c2b
   languageName: node
   linkType: hard
 
@@ -3057,12 +3057,12 @@ __metadata:
   linkType: hard
 
 "@vue-macros/common@npm:^1.8.0":
-  version: 1.10.0
-  resolution: "@vue-macros/common@npm:1.10.0"
+  version: 1.10.1
+  resolution: "@vue-macros/common@npm:1.10.1"
   dependencies:
-    "@babel/types": "npm:^7.23.5"
+    "@babel/types": "npm:^7.23.6"
     "@rollup/pluginutils": "npm:^5.1.0"
-    "@vue/compiler-sfc": "npm:^3.3.10"
+    "@vue/compiler-sfc": "npm:^3.4.13"
     ast-kit: "npm:^0.11.3"
     local-pkg: "npm:^0.5.0"
     magic-string-ast: "npm:^0.3.0"
@@ -3071,7 +3071,7 @@ __metadata:
   peerDependenciesMeta:
     vue:
       optional: true
-  checksum: f8febce83896ba4662284de9f9d22fa0627775d9c690b15d7af82e81158fa90370cd0a6ff79f49ce82ebe75219ac936017216261476f14baf0f3824a467af60e
+  checksum: f3d1ecc773627859823844ee82ebaac556dcf6806ae1ddb60ca46a88810467e2e4f2e3e05122b874926338a9c5df205f400cbc67fa71e3f25ce8320cb0cdcd60
   languageName: node
   linkType: hard
 
@@ -3127,7 +3127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.4.15, @vue/compiler-sfc@npm:^3.3.10":
+"@vue/compiler-sfc@npm:3.4.15, @vue/compiler-sfc@npm:^3.4.13":
   version: 3.4.15
   resolution: "@vue/compiler-sfc@npm:3.4.15"
   dependencies:
@@ -4742,9 +4742,9 @@ __metadata:
   linkType: hard
 
 "dotenv@npm:^16.3.1":
-  version: 16.3.1
-  resolution: "dotenv@npm:16.3.1"
-  checksum: dbb778237ef8750e9e3cd1473d3c8eaa9cc3600e33a75c0e36415d0fa0848197f56c3800f77924c70e7828f0b03896818cd52f785b07b9ad4d88dba73fbba83f
+  version: 16.3.2
+  resolution: "dotenv@npm:16.3.2"
+  checksum: 3d788056eb4c84ae8c8aa86642d0e1da1d41604fcd8d99a97c9b9c850e64faf5e6983717cfc071d4649139583f714d38f75414f8f869fe813cc38c6ad4601797
   languageName: node
   linkType: hard
 
@@ -4781,9 +4781,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.601":
-  version: 1.4.638
-  resolution: "electron-to-chromium@npm:1.4.638"
-  checksum: 52e9d99e84756e403efc53d44b2747a6082df6e33d2a035b9bff9d72006ae5f02c2f4c59ef91345626e90c8c6f5ad3d2dda4a7d32a7194427f18861443882d93
+  version: 1.4.640
+  resolution: "electron-to-chromium@npm:1.4.640"
+  checksum: 75cfe02be2e2b0c7f53e8d97e9d3cd0d8959a4e861f7bf944abace94f9872b9e31128ca3140f657b8b886b919d46f7af03efaf0d8bd8b9a4b48e3212fdd2ec01
   languageName: node
   linkType: hard
 
@@ -7718,11 +7718,11 @@ __metadata:
   linkType: hard
 
 "node-addon-api@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "node-addon-api@npm:7.0.0"
+  version: 7.1.0
+  resolution: "node-addon-api@npm:7.1.0"
   dependencies:
     node-gyp: "npm:latest"
-  checksum: f1a54ae38f6cbd4cdfe69d1b2f3f0c4a3d227eb50f5073f0a3b985d29a0c39c94b82c88213e5075ee1bc262f2e869841c733ebe7111a5e376f1732649edf6a93
+  checksum: e20487e98c76660f4957e81e85c45dfb667140d9be0bf872a3b3dfd86b4ea19c0275939116c90efebc0da7fc6af2c7b7b060512ceebe6417b1ed145a26910453
   languageName: node
   linkType: hard
 
@@ -8192,8 +8192,8 @@ __metadata:
   linkType: hard
 
 "openapi-typescript@npm:^6.7.1":
-  version: 6.7.3
-  resolution: "openapi-typescript@npm:6.7.3"
+  version: 6.7.4
+  resolution: "openapi-typescript@npm:6.7.4"
   dependencies:
     ansi-colors: "npm:^4.1.3"
     fast-glob: "npm:^3.3.2"
@@ -8203,7 +8203,7 @@ __metadata:
     yargs-parser: "npm:^21.1.1"
   bin:
     openapi-typescript: bin/cli.js
-  checksum: 3f84741742ea436ee4f140f2b7f7fcd430021d15c0d56b1a4af35f651bc93c9b1cb8fa351f938179ae5fd7acc396446ee4293e048b3b9caa0bc27d94aef2b1d2
+  checksum: 80bcac218945492e94b4763e9c6db4c30226becc32e26fa4783aae17a95be219df0448b5f80c994b495c10da837d81ee70d5509e208ca94f3d887cd70d36ca43
   languageName: node
   linkType: hard
 
@@ -10291,13 +10291,13 @@ __metadata:
   linkType: hard
 
 "tar-stream@npm:^3.0.0":
-  version: 3.1.6
-  resolution: "tar-stream@npm:3.1.6"
+  version: 3.1.7
+  resolution: "tar-stream@npm:3.1.7"
   dependencies:
     b4a: "npm:^1.6.4"
     fast-fifo: "npm:^1.2.0"
     streamx: "npm:^2.15.0"
-  checksum: 2c32e0d57de778ae415357bfb126a512a384e9bfb8e234920455ad65282181a3765515bbd80392ab8e7e630158376ec7de46b18ab86a33d256a7dcc43b0648b7
+  checksum: b21a82705a72792544697c410451a4846af1f744176feb0ff11a7c3dd0896961552e3def5e1c9a6bbee4f0ae298b8252a1f4c9381e9f991553b9e4847976f05c
   languageName: node
   linkType: hard
 
@@ -10948,7 +10948,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"untyped@npm:^1.4.0":
+"untyped@npm:1.4.0":
   version: 1.4.0
   resolution: "untyped@npm:1.4.0"
   dependencies:
