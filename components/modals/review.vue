@@ -13,7 +13,7 @@
 				>
 			</div>
 			<div v-else>
-				<discord-messages>
+				<discord-messages class="py-2">
 					<discord-message
 						:bot="true"
 						:avatar="data.avatar"
