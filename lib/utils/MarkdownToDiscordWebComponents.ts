@@ -9,7 +9,9 @@ const newLineElement = '<div></div>';
  * @returns The converted web-components.
  */
 export function markdownToDiscordWebComponents(markdown: string) {
-	const linkEscapedMarkdown = markdown.replace(linkEscapeRegex, linkEscapeReplacer).replaceAll('_ _', '');
+	const rolesStorage = useRoles();
+
+	const linkEscapedMarkdown = markdown.replace(linkEscapeRegex, linkEscapeReplacer).replaceAll('_ _', '<br/>');
 	const lines = linkEscapedMarkdown.split('\n');
 	const result: string[] = [];
 
@@ -28,9 +30,14 @@ export function markdownToDiscordWebComponents(markdown: string) {
 		element = element.replaceAll(/(\*)(.+?)\1/g, '<discord-italic>$2</discord-italic>');
 		element = element.replaceAll(/(__)(.+?)\1/g, '<discord-underlined>$2</discord-underlined>');
 		element = element.replaceAll(/(\|\|)(.+?)\1/g, '<discord-spoiler>$2</discord-spoiler>');
-		element = element.replaceAll(/(`){1}(?!``)(.+)\1/g, '<discord-code>$2</discord-code>');
+		element = element.replaceAll(/([`]{1,2})(.+?)\1/g, '<discord-code>$2</discord-code>');
 		element = element.replaceAll(/\[([^\]]+)\]\(<([^>]+)>\)/g, '<discord-link href="$2" target="_blank" rel="noreferrer">$1</discord-link>');
 		element = element.replaceAll(/<(t:[0-9]+:[tTdDfFR])>/g, '<discord-time>&lt;$1&gt;</discord-time>');
+		element = element.replaceAll(/<\/(\w+):\d{18,21}>/g, '<discord-mention type="slash">$1</discord-mention>');
+		element = element.replaceAll(/<@&(\d{18,21})>/g, (_, p1) => {
+			const roleLabel = rolesStorage.getRoleById(p1);
+			return `<discord-mention type="role">${roleLabel ?? p1}</discord-mention>`;
+		});
 
 		if (element.startsWith('```')) {
 			// End of a codeblock

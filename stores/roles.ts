@@ -28,6 +28,11 @@ export const useRoles = defineStore('roles', {
 
 		hasRole(url: string) {
 			return this.roles.some((role) => role.value === url);
+		},
+
+		getRoleById(id: string) {
+			const foundRole = this.roles.find((role) => role.value === id)?.label;
+			return foundRole ?? null;
 		}
 	}
 });
