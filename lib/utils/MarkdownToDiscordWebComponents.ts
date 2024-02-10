@@ -34,6 +34,8 @@ export function markdownToDiscordWebComponents(markdown: string) {
 		element = element.replaceAll(/\[([^\]]+)\]\(<([^>]+)>\)/g, '<discord-link href="$2" target="_blank" rel="noreferrer">$1</discord-link>');
 		element = element.replaceAll(/<(t:[0-9]+:[tTdDfFR])>/g, '<discord-time>&lt;$1&gt;</discord-time>');
 		element = element.replaceAll(/<\/(\w+):\d{18,21}>/g, '<discord-mention type="slash">$1</discord-mention>');
+		element = element.replaceAll(/<@(\d{18,21})>/g, '<discord-mention type="user">$1</discord-mention>');
+		element = element.replaceAll(/<#(\d{18,21})>/g, '<discord-mention type="channel">$1</discord-mention>');
 		element = element.replaceAll(/<@&(\d{18,21})>/g, (_, p1) => {
 			const roleLabel = rolesStorage.getRoleById(p1);
 			return `<discord-mention type="role">${roleLabel ?? p1}</discord-mention>`;
