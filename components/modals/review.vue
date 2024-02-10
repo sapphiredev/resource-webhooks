@@ -52,7 +52,7 @@ import { showToast } from '~/lib/utils/ShowToast';
 import { fetchWebhookProfile } from '~~/lib/api/FetchWebhookProfile';
 import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
 import type { Post } from '~~/lib/types/Post';
-import { markdownToHtml } from '~~/lib/utils/MarkdownToHTML';
+import { markdownToDiscordWebComponents } from '~~/lib/utils/MarkdownToDiscordWebComponents';
 
 const emits = defineEmits(['close-modal', 'reset-form']);
 const props = defineProps<{ values: Post | Update; isEditing: boolean }>();
@@ -66,7 +66,7 @@ const parseMarkdownishInput = () => {
 		parsedText = `${bold('New announcement for')} @${props.values.role.label.replace(/(.+) - \d{18,}/, '$1')}:\n${props.values.text}`;
 	}
 
-	return markdownToHtml(parsedText);
+	return markdownToDiscordWebComponents(parsedText);
 };
 
 async function handleConfirm() {
