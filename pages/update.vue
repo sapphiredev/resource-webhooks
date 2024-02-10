@@ -44,6 +44,7 @@
 
 <script setup lang="ts">
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
+import { showToast } from '~/lib/utils/ShowToast';
 import { fetchWebhookMessage } from '~~/lib/api/FetchWebhookMessage';
 import { updateSchema } from '~~/lib/schemas/updateSchema';
 import type { Update } from '~~/lib/types/Update';
@@ -62,7 +63,6 @@ const { handleSubmit, resetForm, isSubmitting, meta, values, setFieldValue } = u
 });
 
 const loadingIndicator = useLoadingIndicator();
-const { $toast } = useNuxtApp();
 
 const onInvalidSubmit: InvalidSubmissionHandler<Update> = ({ errors }) => useInvalidFormSubmit(errors);
 const onSuccessfulSubmit: SubmissionHandler<Update> = () => (openModal.value = '');
@@ -76,14 +76,14 @@ async function getMessageContent() {
 
 	if (data) {
 		setFieldValue('text', data);
-		$toast.show({
+		showToast({
 			type: 'success',
 			message: 'Set the content from Discord to the text input field',
 			timeout: 5,
 			pauseOnHover: true
 		});
 	} else {
-		$toast.show({
+		showToast({
 			type: 'danger',
 			message: 'Failed to fetch message from Discord',
 			timeout: 5,

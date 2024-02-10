@@ -7,10 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineCustomElements } from '@skyra/discord-components-core/loader';
 import { configure } from 'vee-validate';
-
-defineCustomElements();
 
 watch(usePreferredColorScheme(), (value) => {
 	document.documentElement.setAttribute('data-theme', value);

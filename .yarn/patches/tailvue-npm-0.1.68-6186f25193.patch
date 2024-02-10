@@ -1,0 +1,21 @@
+diff --git a/package.json b/package.json
+index 24f2f2a3f44815a63adcd03591c1e850951e36ec..ec8a5adbd9e787bd0928f9e7371b01ba52921917 100644
+--- a/package.json
++++ b/package.json
+@@ -25,8 +25,14 @@
+   "module": "./dist/tailvue.es.js",
+   "exports": {
+     ".": {
+-      "import": "./dist/tailvue.es.js",
+-      "require": "./dist/tailvue.umd.js"
++      "import": {
++        "types": "./src/typings.d.ts",
++        "default": "./dist/tailvue.es.js"
++      },
++      "require": {
++        "types": "./src/typings.d.ts",
++        "default": "./dist/tailvue.umd.js"
++      }
+     }
+   },
+   "scripts": {

@@ -2,7 +2,7 @@
 	<div class="modal">
 		<form @submit="onSubmit" class="modal-box relative">
 			<button aria-label="Close popup" class="btn-sm btn-circle btn absolute right-2 top-2" @click="handleClose(resetForm)">
-				<hero-icons-x />
+				<x-circle-icon />
 			</button>
 			<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new Webhook URL' : 'Update Webhook URL' }}</h3>
 			<forms-input name="label" label="Label" />
@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+import { XCircleIcon } from '@heroicons/vue/24/solid';
 import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
 import { addOrEditWebhookSchema } from '~~/lib/schemas/addOrEditWebhookSchema';
 import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';

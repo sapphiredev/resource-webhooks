@@ -3,9 +3,7 @@
 		<div class="navbar-start flex items-center">
 			<details ref="mobileMenuDropdown" class="dropdown">
 				<summary tabindex="0" class="btn-ghost btn lg:hidden">
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-					</svg>
+					<bars4-icon class="h-5 w-5" />
 				</summary>
 				<ul tabindex="0" class="menu-compact dropdown-content menu rounded-box mt-3 w-52 bg-base-100 p-2 shadow">
 					<li>
@@ -58,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import { Bars4Icon } from '@heroicons/vue/24/solid';
 import type { HTMLDetailsNavbarElement } from '~~/lib/types/HTMLDetailsElement';
 
 const mobileMenuDropdown = ref<HTMLDetailsNavbarElement | null>(null);

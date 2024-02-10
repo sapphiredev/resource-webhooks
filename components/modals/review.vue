@@ -44,8 +44,11 @@
 </template>
 
 <script setup lang="ts">
+import '@skyra/discord-components-core';
+
 import { bold } from '@discordjs/formatters';
 import type { Update } from '~/lib/types/Update';
+import { showToast } from '~/lib/utils/ShowToast';
 import { fetchWebhookProfile } from '~~/lib/api/FetchWebhookProfile';
 import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
 import type { Post } from '~~/lib/types/Post';
@@ -56,7 +59,6 @@ const props = defineProps<{ values: Post | Update; isEditing: boolean }>();
 
 const { data, pending, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
 const loadingIndicator = useLoadingIndicator();
-const { $toast } = useNuxtApp();
 
 const parseMarkdownishInput = () => {
 	let parsedText = props.values.text;
@@ -79,14 +81,14 @@ async function handleConfirm() {
 		emits('reset-form');
 		emits('close-modal');
 
-		$toast.show({
+		showToast({
 			type: 'success',
 			message: `Successfully ${props.isEditing ? 'updated' : 'posted'} Webhook message!`,
 			timeout: 5,
 			pauseOnHover: true
 		});
 	} catch (error) {
-		$toast.show({
+		showToast({
 			type: 'denied',
 			message: `Failed to ${
 				props.isEditing ? 'update' : 'post'

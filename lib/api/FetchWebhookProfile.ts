@@ -1,8 +1,8 @@
-import type { Components } from '@skyra/discord-components-core';
+import type { DiscordMessage } from '@skyra/discord-components-core/discord-message.js';
 import { RouteBases, Routes, type RESTGetAPIWebhookWithTokenResult } from 'discord-api-types/rest/v10';
 import type { Post } from '~~/lib/types/Post';
 
-export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdating: boolean = false): Promise<Partial<Components.DiscordMessage>> {
+export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdating: boolean = false): Promise<Partial<DiscordMessage>> {
 	if (!webhook) throw 'No webhook URL provided.';
 
 	const loadingIndicator = useLoadingIndicator();
