@@ -10,8 +10,12 @@
 					<img alt="Logo Vercel" src="/icons/powered-by-vercel.svg" style="height: 40px" />
 				</sponsor-link>
 
-				<sponsor-link href="https://polypane.app/" title="Polypane">
+				<sponsor-link href="https://polypane.app/" title="Polypane" class="mr-2">
 					<img alt="Logo Polypane" src="/icons/powered-by-polypane.svg" style="height: 40px" />
+				</sponsor-link>
+
+				<sponsor-link href="https://www.cloudflare.com/" title="Cloudflare">
+					<img alt="Logo Cloudflare" src="/icons/powered-by-cloudflare.svg" style="height: 40px" />
 				</sponsor-link>
 			</div>
 		</div>
