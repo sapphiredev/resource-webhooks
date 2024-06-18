@@ -56,25 +56,36 @@ export default defineNuxtConfig({
 			isCustomElement: (tag) => tag.startsWith('discord-')
 		}
 	},
+
 	modules: [
-		'@nuxt/devtools',
 		'@vueuse/nuxt',
 		'@nuxtjs/tailwindcss',
-		'@tailvue/nuxt',
+		'@nuxt/eslint',
 		'@vite-pwa/nuxt',
 		'@pinia/nuxt',
-		'@pinia-plugin-persistedstate/nuxt'
+		'@pinia-plugin-persistedstate/nuxt',
+		'@tailvue/nuxt',
+		'@vee-validate/nuxt'
 	],
-	build: { transpile: ['vee-validate'] },
+
 	typescript: {
 		shim: false
 	},
+
 	imports: {
 		dirs: ['lib/utils']
 	},
+
 	nitro: {
 		preset: 'cloudflare-pages'
 	},
+
+	veeValidate: {
+		componentNames: {
+			ErrorMessage: 'VeeErrorMessage'
+		}
+	},
+
 	pwa: {
 		registerType: 'autoUpdate',
 		includeManifestIcons: false,
@@ -123,6 +134,7 @@ export default defineNuxtConfig({
 			]
 		}
 	},
+
 	app: {
 		head: {
 			charset: 'utf-8',
@@ -194,5 +206,7 @@ export default defineNuxtConfig({
 				{ property: 'og:url', content: 'https://webhooks.sapphirejs.dev' }
 			]
 		}
-	}
+	},
+
+	compatibilityDate: '2024-07-23'
 });

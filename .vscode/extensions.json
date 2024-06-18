@@ -1,0 +1,13 @@
+{
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"formulahendry.auto-rename-tag",
+		"EditorConfig.EditorConfig",
+		"dbaeumer.vscode-eslint",
+		"Nuxtr.nuxt-vscode-extentions",
+		"esbenp.prettier-vscode",
+		"bradlc.vscode-tailwindcss",
+		"antfu.vite",
+		"vitest.explorer"
+	]
+}

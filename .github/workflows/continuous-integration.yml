@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  Formatting:
-    name: Checking formatting
+  Linting:
+    name: Linting
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -21,5 +21,22 @@ jobs:
           registry-url: https://registry.yarnpkg.com/
       - name: Install Dependencies
         run: yarn --immutable
-      - name: Check formatting
-        run: yarn format:check
+      - name: ESLint
+        run: yarn lint
+
+  Typechecking:
+    name: Typechecking
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3
+      - name: Use Node.js v20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: yarn
+          registry-url: https://registry.yarnpkg.com/
+      - name: Install Dependencies
+        run: yarn --immutable
+      - name: Typechecking
+        run: yarn test

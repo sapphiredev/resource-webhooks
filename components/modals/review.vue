@@ -1,15 +1,16 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
 	<div class="modal">
 		<div class="modal-box relative min-w-full">
-			<div v-if="pending">
+			<div v-if="status === 'pending'">
 				<div class="flex items-center justify-center">
-					<progress class="progress-primary progress w-1/3"></progress>
+					<progress class="progress progress-primary w-1/3"></progress>
 				</div>
 			</div>
 			<div v-else-if="error || !data">
 				An error occurred fetching the webhook profile. Please contact the Sapphire developers by joining
-				<nuxt-link aria-label="Join Sapphire Discord Server" class="link-secondary link" to="https://discord.gg/sapphiredev" target="_blank"
-					>the official Sapphire server</nuxt-link
+				<NuxtLink aria-label="Join Sapphire Discord Server" class="link link-secondary" to="https://discord.gg/sapphiredev" target="_blank"
+					>the official Sapphire server</NuxtLink
 				>
 			</div>
 			<div v-else>
@@ -28,12 +29,12 @@
 				</discord-messages>
 			</div>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button aria-label="Cancel" type="button" class="btn-error btn" @click="emits('close-modal')">Cancel</button>
+				<button aria-label="Cancel" type="button" class="btn btn-error" @click="emits('close-modal')">Cancel</button>
 				<button
+					v-show="status !== 'pending' && !error && data !== null"
 					aria-label="Confirm and post"
-					v-show="!pending && !error && data !== null"
 					type="button"
-					class="btn-primary btn"
+					class="btn btn-primary"
 					@click="handleConfirm"
 				>
 					Confirm
@@ -57,8 +58,8 @@ import { markdownToDiscordWebComponents } from '~~/lib/utils/MarkdownToDiscordWe
 const emits = defineEmits(['close-modal', 'reset-form']);
 const props = defineProps<{ values: Post | Update; isEditing: boolean }>();
 
-const { data, pending, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
-const loadingIndicator = useLoadingIndicator();
+const { data, status, error } = useAsyncData('webhookProfile', () => fetchWebhookProfile(props.values.webhookUrl));
+const loadingStorage = useLoadingStore();
 
 const parseMarkdownishInput = () => {
 	let parsedText = props.values.text;
@@ -71,7 +72,7 @@ const parseMarkdownishInput = () => {
 
 async function handleConfirm() {
 	try {
-		loadingIndicator.value = true;
+		loadingStorage.startLoading();
 
 		await sendWebhookMessage(
 			{ role: props.values.role, text: props.values.text, webhookUrl: props.values.webhookUrl, messageId: (props.values as Update).messageId },
@@ -97,7 +98,7 @@ async function handleConfirm() {
 			pauseOnHover: true
 		});
 	} finally {
-		loadingIndicator.value = false;
+		loadingStorage.endLoading();
 	}
 }
 </script>

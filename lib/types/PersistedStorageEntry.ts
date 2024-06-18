@@ -11,4 +11,4 @@ function isObject<T extends Constructor<unknown> = ObjectConstructor>(input: unk
 	return typeof input === 'object' && input ? input.constructor === (constructorType ?? Object) : false;
 }
 
-type Constructor<T> = new (...args: any[]) => T;
+type Constructor<T> = new (...args: unknown[]) => T;

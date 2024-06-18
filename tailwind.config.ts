@@ -1,14 +1,16 @@
+import daisyui from 'daisyui';
+import daisyuiThemes from 'daisyui/src/theming/themes.js';
 import type { Config } from 'tailwindcss';
 
-export default <Partial<Config>>{
-	plugins: [require('daisyui')],
-	content: ['node_modules/tailvue/dist/tailvue.es.js'],
+export default {
+	plugins: [daisyui],
 	darkMode: ['class', '[data-theme="dark"]'],
+	content: ['node_modules/tailvue/dist/tailvue.es.js'],
 	daisyui: {
 		themes: [
 			{
 				dark: {
-					...require('daisyui/src/theming/themes')['dark'],
+					...daisyuiThemes.dark,
 					primary: '#0F52BA',
 					secondary: '#57B8FF',
 					accent: '#F4D58D',
@@ -21,7 +23,7 @@ export default <Partial<Config>>{
 			},
 			{
 				light: {
-					...require('daisyui/src/theming/themes')['light'],
+					...daisyuiThemes.light,
 					primary: '#0F52BA',
 					secondary: '#57B8FF',
 					accent: '#F4D58D',
@@ -33,4 +35,4 @@ export default <Partial<Config>>{
 			}
 		]
 	}
-};
+} satisfies Partial<Config>;
