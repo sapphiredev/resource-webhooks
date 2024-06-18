@@ -57,9 +57,9 @@ export default defineNuxtConfig({
 		}
 	},
 	modules: [
-		'@nuxt/devtools',
 		'@vueuse/nuxt',
 		'@nuxtjs/tailwindcss',
+		 '@nuxt/eslint',
 		'@vite-pwa/nuxt',
 		'@pinia/nuxt',
 		'@pinia-plugin-persistedstate/nuxt'
