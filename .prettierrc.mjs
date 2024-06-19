@@ -3,7 +3,6 @@ import sapphirePrettierConfig from '@sapphire/prettier-config';
 /** @type {import('prettier').Config} */
 export default {
 	...sapphirePrettierConfig,
-	printWidth: 100,
 	plugins: ['prettier-plugin-tailwindcss'],
 	overrides: [
 		...sapphirePrettierConfig.overrides,
@@ -12,14 +11,8 @@ export default {
 			options: {
 				tabWidth: 2,
 				useTabs: false,
-				printWidth: 120,
+				printWidth: 80,
 				proseWrap: 'always'
-			}
-		},
-		{
-			files: '*.svg',
-			options: {
-				parser: 'xml'
 			}
 		}
 	]

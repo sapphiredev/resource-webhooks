@@ -1,5 +1,3 @@
-import { showToast } from '~/lib/utils/ShowToast';
-
 export default function <T extends object>(errors: T) {
 	for (const error of Object.values(errors)) {
 		if (error) {

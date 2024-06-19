@@ -4,7 +4,8 @@
 
 # Sapphire
 
-**Webhook frontend UI to send webhook based messages to Discord, built with Nuxt**
+**Webhook frontend UI to send webhook based messages to Discord, built with
+Nuxt**
 
 | [Click here to go to the production website][prod] |
 | -------------------------------------------------- |
@@ -19,9 +20,13 @@
 
 ## Buy us some doughnuts
 
-Sapphire Community is and always will be open source, even if we don't get donations. That being said, we know there are amazing people who may still want to donate just to show their appreciation. Thank you very much in advance!
+Sapphire Community is and always will be open source, even if we don't get
+donations. That being said, we know there are amazing people who may still want
+to donate just to show their appreciation. Thank you very much in advance!
 
-We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub Sponsorships. You can use the buttons below to donate through your method of choice.
+We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub
+Sponsorships. You can use the buttons below to donate through your method of
+choice.
 
 |   Donate With   |                       Address                       |
 | :-------------: | :-------------------------------------------------: |
@@ -32,7 +37,8 @@ We accept donations through Open Collective, Ko-fi, Paypal, Patreon and GitHub S
 
 ## Contributors
 
-Please make sure to read the [Contributing Guide][contributing] before making a pull request.
+Please make sure to read the [Contributing Guide][contributing] before making a
+pull request.
 
 Thank you to all the people who already contributed to Sapphire!
 
@@ -40,5 +46,6 @@ Thank you to all the people who already contributed to Sapphire!
   <img src="https://contrib.rocks/image?repo=sapphiredev/resource-webhooks" />
 </a>
 
-[contributing]: https://github.com/sapphiredev/.github/blob/main/.github/CONTRIBUTING.md
+[contributing]:
+  https://github.com/sapphiredev/.github/blob/main/.github/CONTRIBUTING.md
 [prod]: https://webhooks.sapphirejs.dev

@@ -22,6 +22,10 @@ export const useRoles = defineStore('roles', {
 			}
 		},
 
+		spliceInRole(index: number, role: PersistedStorageEntry) {
+			this.roles.splice(index, 1, role);
+		},
+
 		removeRole(url: string) {
 			this.roles = this.roles.filter((role) => url !== role.value);
 		},

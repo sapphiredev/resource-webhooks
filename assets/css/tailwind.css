@@ -34,7 +34,7 @@
 	}
 
 	.tooltip-custom {
-		@apply tooltip-info tooltip tooltip-right;
+		@apply tooltip tooltip-right tooltip-info;
 	}
 }
 

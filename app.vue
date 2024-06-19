@@ -1,9 +1,12 @@
 <template>
 	<VitePwaManifest />
-	<LoadingIndicator />
+	<NuxtLoadingIndicator />
 	<NuxtLayout name="main">
 		<NuxtPage />
 	</NuxtLayout>
+	<Teleport to="body">
+		<LoadingIndicator />
+	</Teleport>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,7 @@
 <template>
-	<nuxt-link :aria-label="`Sponsor link to ${title}`" :to="href" target="_blank">
+	<NuxtLink :aria-label="`Sponsor link to ${title}`" :to="href" target="_blank">
 		<slot></slot>
-	</nuxt-link>
+	</NuxtLink>
 </template>
 
 <script setup lang="ts">

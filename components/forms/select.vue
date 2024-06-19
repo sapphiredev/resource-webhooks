@@ -1,33 +1,43 @@
 <template>
-	<div class="form-control mb-4 w-full">
-		<label class="label">
-			<span class="label-text">
-				{{ label }}
-				<span v-if="options.length === 0">
-					<span class="font-bold text-error">
-						<nuxt-link :aria-label="`Go to configuration page for ${label}`" class="link-secondary link" :to="addNewOptionHref"
-							>configuration page</nuxt-link
-						>
+	<form.Field :name="name">
+		<template #default="{ state }">
+			<div class="form-control mb-4 w-full">
+				<label class="label">
+					<span class="label-text">
+						{{ label }}
+						<span v-if="options.length === 0">
+							<span class="font-bold text-error">
+								<NuxtLink :aria-label="`Go to configuration page for ${label}`" class="link link-secondary" :to="addNewOptionHref"
+									>configuration page</NuxtLink
+								>
+							</span>
+						</span>
 					</span>
-				</span>
-			</span>
-		</label>
-		<select class="max-x-ws select w-full shadow-md" :disabled="options.length === 0" v-model="value">
-			<option :disabled="required" selected :value="null">None</option>
-			<option v-for="option in options" :key="option.value" :value="option" :selected="value && value.value === option.value">
-				{{ option.label + ' - ' + option.value }}
-			</option>
+				</label>
+				<select v-model="state.value" class="max-x-ws select w-full shadow-md" :disabled="options.length === 0">
+					<option :disabled="required" selected :value="null">None</option>
+					<option
+						v-for="option in options"
+						:key="option.value"
+						:value="option"
+						:selected="state.value && state.value.value === option.value"
+					>
+						{{ option.label + ' - ' + option.value }}
+					</option>
 
-			<forms-error-message :name="name" :hasErrorMessage="!!errorMessage" />
-		</select>
-	</div>
+					<FormsErrorMessage :name="name" :has-error-message="Boolean(state.meta.errors.length)" />
+				</select>
+			</div>
+		</template>
+	</form.Field>
 </template>
 
 <script setup lang="ts">
-import { useField } from 'vee-validate';
+import type { FormApi, Validator } from '@tanstack/vue-form';
 import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
-const props = defineProps<{
+defineProps<{
+	form: FormApi<any, Validator<any, unknown>>;
 	name: string;
 	label: string;
 	addNewOptionHref: string;
@@ -35,5 +45,5 @@ const props = defineProps<{
 	options: PersistedStorageEntry[];
 }>();
 
-const { value, errorMessage } = useField<PersistedStorageEntry>(props.name);
+// const { value, errorMessage } = useField<PersistedStorageEntry>(props.name);
 </script>

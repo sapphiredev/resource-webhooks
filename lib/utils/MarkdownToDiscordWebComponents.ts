@@ -44,7 +44,7 @@ export function markdownToDiscordWebComponents(markdown: string) {
 		if (element.startsWith('```')) {
 			// End of a codeblock
 			if (isParsingInsideCodeBlock) {
-				let codeBlock = `<discord-code multiline language="${language}">` + codeBlockLines.join('\n') + '\n</discord-code>';
+				const codeBlock = `<discord-code multiline language="${language}">` + codeBlockLines.join('\n') + '\n</discord-code>';
 				result.push(codeBlock);
 				result.push(newLineElement);
 				codeBlockLines = [];

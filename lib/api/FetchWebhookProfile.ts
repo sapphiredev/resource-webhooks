@@ -5,7 +5,7 @@ import type { Post } from '~~/lib/types/Post';
 export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdating: boolean = false): Promise<Partial<DiscordMessage>> {
 	if (!webhook) throw 'No webhook URL provided.';
 
-	const loadingIndicator = useLoadingIndicator();
+	const loadingStorage = useLoadingStore();
 
 	const [hookID, hookToken] = webhook.value.split('/').slice(-2);
 
@@ -13,7 +13,7 @@ export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdatin
 
 	const url = RouteBases.api + Routes.webhook(hookID, hookToken);
 
-	loadingIndicator.value = true;
+	loadingStorage.startLoading();
 
 	try {
 		const response = await $fetch<RESTGetAPIWebhookWithTokenResult>(url, {
@@ -22,7 +22,7 @@ export async function fetchWebhookProfile(webhook: Post['webhookUrl'], isUpdatin
 			}
 		});
 
-		loadingIndicator.value = false;
+		loadingStorage.endLoading();
 
 		return {
 			avatar: `https://cdn.discordapp.com/avatars/${response.id}/${response.avatar}.png?size=4096`,

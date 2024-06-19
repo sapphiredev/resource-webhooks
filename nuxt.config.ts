@@ -59,10 +59,11 @@ export default defineNuxtConfig({
 	modules: [
 		'@vueuse/nuxt',
 		'@nuxtjs/tailwindcss',
-		 '@nuxt/eslint',
+		'@nuxt/eslint',
 		'@vite-pwa/nuxt',
 		'@pinia/nuxt',
-		'@pinia-plugin-persistedstate/nuxt'
+		'@pinia-plugin-persistedstate/nuxt',
+		'@tailvue/nuxt'
 	],
 	typescript: {
 		shim: false

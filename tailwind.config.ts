@@ -5,6 +5,7 @@ import type { Config } from 'tailwindcss';
 export default {
 	plugins: [daisyui],
 	darkMode: ['class', '[data-theme="dark"]'],
+	content: ['node_modules/tailvue/dist/tailvue.es.js'],
 	daisyui: {
 		themes: [
 			{
