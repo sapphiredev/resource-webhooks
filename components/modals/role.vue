@@ -74,6 +74,8 @@ const form = useForm<PersistedStorageEntry, Validator<PersistedStorageEntry, unk
 	},
 	validatorAdapter: yupValidator(),
 	validators: {
+		onMount: addOrEditRoleSchema(props.action === 'edit'),
+		onBlur: addOrEditRoleSchema(props.action === 'edit'),
 		onSubmit: addOrEditRoleSchema(props.action === 'edit'),
 		onChange: addOrEditRoleSchema(props.action === 'edit')
 	},
