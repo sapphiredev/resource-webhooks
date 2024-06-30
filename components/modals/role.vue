@@ -10,10 +10,10 @@
 			<form.Field name="label">
 				<template #default="{ field, state }">
 					<FormsInput
-						:handle-blur="field.handleBlur"
 						:state="state"
 						name="label"
 						label="Role name"
+						@blur="field.handleBlur"
 						@input="(newValue) => field.handleChange(newValue)"
 					/>
 				</template>
@@ -21,10 +21,10 @@
 			<form.Field name="value">
 				<template #default="{ field, state }">
 					<FormsInput
-						:handle-blur="field.handleBlur"
 						:state="state"
 						name="value"
 						label="Role Snowflake"
+						@blur="field.handleBlur"
 						@input="(newValue) => field.handleChange(newValue)"
 					/>
 				</template>
