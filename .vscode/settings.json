@@ -1,9 +1,9 @@
 {
-	"editor.tabSize": 4,
-	"editor.useTabStops": true,
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": true,
-	"files.eol": "\n",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always",
+		"source.fixAll.eslint": "always",
+		"source.organizeImports": "never"
+	},
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/bower_components": true,
@@ -12,8 +12,18 @@
 		"**/.next/": true,
 		"**/.git/": true
 	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
-	"prettier.documentSelectors": ["**/*.svg"]
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"eslint.useFlatConfig": true,
+	"tailwindCSS.experimental.configFile": "tailwind.config.ts",
+	"prettier.documentSelectors": ["**/*.svg"],
+	"sonarlint.connectedMode.project": {
+		"connectionId": "https-sonarqube-sapphirejs-dev",
+		"projectKey": "sapphiredev_resource-webhooks_e2cb9959-cd79-4b35-a323-e26dee4ce7d4"
+	}
 }

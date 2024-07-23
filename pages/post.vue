@@ -1,12 +1,18 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
-		<form @submit="onSubmit" class="flex flex-col">
-			<modals-review :values="values" :is-editing="false" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
+		<form class="flex flex-col" @submit="onSubmit">
+			<modals-review
+				v-if="modalStorage.identifier === ''"
+				:values="values"
+				:is-editing="false"
+				@close-modal="modalStorage.resetModal()"
+				@reset-form="resetForm()"
+			/>
 			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
-				addNewOptionHref="/configure/webhooks"
+				add-new-option-href="/configure/webhooks"
 				class="py-2 lg:py-6"
 				:options="webhookStorage.webhooks"
 				:required="true"
@@ -14,16 +20,16 @@
 			<forms-select
 				name="role"
 				label="Optionally choose a role to mention"
-				addNewOptionHref="/configure/roles"
+				add-new-option-href="/configure/roles"
 				:options="rolesStorage.roles"
 				:required="false"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button aria-label="Reset form" type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
+				<button aria-label="Reset form" type="button" class="btn-shadow btn btn-accent" @click="resetForm()">Reset form</button>
 				<button
 					aria-label="Review post"
 					type="submit"
-					class="btn-shadow btn-primary btn"
+					class="btn-shadow btn btn-primary"
 					:disabled="isSubmitting || !meta.dirty || !meta.valid"
 				>
 					Review post
@@ -34,13 +40,14 @@
 </template>
 
 <script setup lang="ts">
-import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
+import type { InvalidSubmissionHandler, SubmissionHandler } from 'vee-validate';
 import { postSchema } from '~~/lib/schemas/postSchema';
 import type { Post } from '~~/lib/types/Post';
 
 const rolesStorage = useRoles();
 const webhookStorage = useWebhooks();
-const openModal = useOpenModal();
+const modalStorage = useModalStore();
+
 const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 	initialValues: {
 		webhookUrl: null,
@@ -51,7 +58,7 @@ const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 });
 
 const onInvalidSubmit: InvalidSubmissionHandler<Post> = ({ errors }) => useInvalidFormSubmit(errors);
-const onSuccessfulSubmit: SubmissionHandler<Post> = () => (openModal.value = '');
+const onSuccessfulSubmit: SubmissionHandler<Post> = () => modalStorage.closeModal();
 
 const onSubmit = handleSubmit(onSuccessfulSubmit, onInvalidSubmit);
 </script>

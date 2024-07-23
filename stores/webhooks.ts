@@ -22,6 +22,10 @@ export const useWebhooks = defineStore('webhooks', {
 			}
 		},
 
+		spliceInWebhook(index: number, webhook: PersistedStorageEntry) {
+			this.webhooks.splice(index, 1, webhook);
+		},
+
 		removeWebhook(url: string) {
 			this.webhooks = this.webhooks.filter((webhook) => url !== webhook.value);
 		},

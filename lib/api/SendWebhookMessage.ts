@@ -1,8 +1,8 @@
-import { bold, roleMention } from '@discordjs/formatters';
 import { promiseTimeout } from '@vueuse/shared';
 import { RouteBases, Routes, type RESTPostAPIChannelMessageResult, type RESTPostAPIWebhookWithTokenJSONBody } from 'discord-api-types/rest/v10';
 import type { Post } from '~~/lib/types/Post';
 import type { Update } from '~~/lib/types/Update';
+import { subscript, roleMention } from '~/lib/utils/Formatters';
 
 const SapphireServerId = '737141877803057244';
 const jumpRegex = /%JUMP_TO_TOP%/gm;
@@ -10,8 +10,8 @@ const jumpRegex = /%JUMP_TO_TOP%/gm;
 export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'post' | 'update') {
 	if (!params.webhookUrl?.value || !params.text) return;
 
-	if (params.role && !params.text.startsWith(bold('New announcement for'))) {
-		params.text = `${bold('New announcement for')} ${roleMention(params.role.value)}:\n${params.text}`;
+	if (params.role && !params.text.startsWith(subscript('New announcement for'))) {
+		params.text = `${subscript('New announcement for')} ${roleMention(params.role.value)}:\n${params.text}`;
 	}
 
 	// Get the hookID and hookToken. If it is a release channel then just get the release environment variable.

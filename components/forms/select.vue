@@ -5,26 +5,25 @@
 				{{ label }}
 				<span v-if="options.length === 0">
 					<span class="font-bold text-error">
-						<nuxt-link :aria-label="`Go to configuration page for ${label}`" class="link-secondary link" :to="addNewOptionHref"
-							>configuration page</nuxt-link
+						<NuxtLink :aria-label="`Go to configuration page for ${label}`" class="link link-secondary" :to="addNewOptionHref"
+							>configuration page</NuxtLink
 						>
 					</span>
 				</span>
 			</span>
 		</label>
-		<select class="max-x-ws select w-full shadow-md" :disabled="options.length === 0" v-model="value">
+		<select v-model="value" class="max-x-ws select w-full shadow-md" :disabled="options.length === 0">
 			<option :disabled="required" selected :value="null">None</option>
 			<option v-for="option in options" :key="option.value" :value="option" :selected="value && value.value === option.value">
 				{{ option.label + ' - ' + option.value }}
 			</option>
 
-			<forms-error-message :name="name" :hasErrorMessage="!!errorMessage" />
+			<FormsErrorMessage :name="name" :has-error-message="!!errorMessage" />
 		</select>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { useField } from 'vee-validate';
 import type { PersistedStorageEntry } from '~~/lib/types/PersistedStorageEntry';
 
 const props = defineProps<{
@@ -35,5 +34,5 @@ const props = defineProps<{
 	options: PersistedStorageEntry[];
 }>();
 
-const { value, errorMessage } = useField<PersistedStorageEntry>(props.name);
+const { value, errorMessage } = useField<PersistedStorageEntry>(toRef(props, 'name'));
 </script>

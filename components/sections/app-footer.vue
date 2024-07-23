@@ -5,9 +5,9 @@
 				<p class="mb-2 mt-4 max-w-full flex-grow-0 basis-full text-center text-sm opacity-70">
 					Copyright © 2022 The Sapphire Community and its contributors
 				</p>
-				<sponsor-link href="https://polypane.app/" title="Polypane">
-					<img alt="Logo Polypane" src="/icons/powered-by-polypane.svg" style="height: 40px" />
-				</sponsor-link>
+				<SponsorLink href="https://polypane.app/" title="Polypane">
+					<img alt="Logo Polypane" src="/icons/powered-by-polypane.svg" class="h-[40px]" />
+				</SponsorLink>
 			</div>
 		</div>
 	</footer>

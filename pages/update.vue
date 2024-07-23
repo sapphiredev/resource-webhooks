@@ -1,12 +1,18 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
-		<form @submit="onSubmit" class="flex flex-col">
-			<modals-review :values="values" :is-editing="true" @close-modal="openModal = null" @reset-form="resetForm()" v-if="openModal === ''" />
+		<form class="flex flex-col" @submit="onSubmit">
+			<modals-review
+				v-if="modalStorage.identifier === ''"
+				:values="values"
+				:is-editing="true"
+				@close-modal="modalStorage.resetModal()"
+				@reset-form="resetForm()"
+			/>
 			<forms-textarea name="text" label="Message Text" />
 			<forms-select
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
-				addNewOptionHref="/configure/webhooks"
+				add-new-option-href="/configure/webhooks"
 				class="pt-2 lg:pt-3"
 				:options="webhookStorage.webhooks"
 				:required="true"
@@ -14,7 +20,7 @@
 			<forms-input name="messageId" label="Message id to update" />
 			<button
 				type="button"
-				class="btn-shadow btn-primary btn w-full"
+				class="btn-shadow btn btn-primary w-full"
 				:disabled="!values.messageId || !values.webhookUrl"
 				@click="getMessageContent()"
 			>
@@ -23,16 +29,16 @@
 			<forms-select
 				name="role"
 				label="Optionally choose a role to mention"
-				addNewOptionHref="/configure/roles"
+				add-new-option-href="/configure/roles"
 				:options="rolesStorage.roles"
 				:required="false"
 			/>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button aria-label="Reset form" type="button" class="btn-shadow btn-accent btn" @click="resetForm()">Reset form</button>
+				<button aria-label="Reset form" type="button" class="btn-shadow btn btn-accent" @click="resetForm()">Reset form</button>
 				<button
 					aria-label="Review post"
 					type="submit"
-					class="btn-shadow btn-primary btn"
+					class="btn-shadow btn btn-primary"
 					:disabled="isSubmitting || !meta.dirty || !meta.valid"
 				>
 					Review post
@@ -43,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import { useForm, type InvalidSubmissionHandler, type SubmissionHandler } from 'vee-validate';
+import type { InvalidSubmissionHandler, SubmissionHandler } from 'vee-validate';
 import { showToast } from '~/lib/utils/ShowToast';
 import { fetchWebhookMessage } from '~~/lib/api/FetchWebhookMessage';
 import { updateSchema } from '~~/lib/schemas/updateSchema';
@@ -51,7 +57,9 @@ import type { Update } from '~~/lib/types/Update';
 
 const rolesStorage = useRoles();
 const webhookStorage = useWebhooks();
-const openModal = useOpenModal();
+const modalStorage = useModalStore();
+const loadingStorage = useLoadingStore();
+
 const { handleSubmit, resetForm, isSubmitting, meta, values, setFieldValue } = useForm<Update>({
 	initialValues: {
 		webhookUrl: null,
@@ -62,15 +70,13 @@ const { handleSubmit, resetForm, isSubmitting, meta, values, setFieldValue } = u
 	validationSchema: updateSchema
 });
 
-const loadingIndicator = useLoadingIndicator();
-
 const onInvalidSubmit: InvalidSubmissionHandler<Update> = ({ errors }) => useInvalidFormSubmit(errors);
-const onSuccessfulSubmit: SubmissionHandler<Update> = () => (openModal.value = '');
+const onSuccessfulSubmit: SubmissionHandler<Update> = () => modalStorage.closeModal();
 
 const onSubmit = handleSubmit(onSuccessfulSubmit, onInvalidSubmit);
 
 async function getMessageContent() {
-	loadingIndicator.value = true;
+	loadingStorage.startLoading();
 
 	const data = await fetchWebhookMessage(values);
 
@@ -91,6 +97,6 @@ async function getMessageContent() {
 		});
 	}
 
-	loadingIndicator.value = false;
+	loadingStorage.endLoading();
 }
 </script>

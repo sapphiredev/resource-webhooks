@@ -7,18 +7,16 @@
 		<textarea
 			v-model="value"
 			type="text"
-			class="textarea-bordered textarea h-full font-mono shadow-md"
+			class="textarea textarea-bordered h-full font-mono shadow-md"
 			:class="{ 'input-error': !!errorMessage }"
 		/>
 		<label class="label">
-			<forms-error-message :name="name" :hasErrorMessage="!!errorMessage" />
+			<FormsErrorMessage :name="name" :has-error-message="!!errorMessage" />
 		</label>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { useField, useFieldValue } from 'vee-validate';
-
 const props = defineProps<{ name: string; label: string }>();
 
 const { value, errorMessage } = useField<string>(toRef(props, 'name'));
