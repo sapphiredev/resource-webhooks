@@ -1,12 +1,12 @@
 <template>
 	<div class="modal">
-		<form class="modal-box relative" @submit="onSubmit">
+		<form class="modal-box relative max-w-[40rem]" @submit="onSubmit">
 			<button aria-label="Close popup" class="btn btn-circle btn-sm absolute right-2 top-2" @click="handleClose(resetForm)">
 				<XCircleIcon />
 			</button>
 			<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new role' : 'Update role' }}</h3>
-			<FormsInput name="label" label="Role name" />
-			<FormsInput name="value" label="Role Snowflake" />
+			<FormsInput name="label" label="Role name" :required="true" />
+			<FormsInput name="value" label="Role Snowflake" :required="true" />
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
 				<button aria-label="Reset inputs" type="button" class="btn btn-accent" @click="resetForm()">Reset form</button>
 				<button aria-label="Add role" type="submit" class="btn btn-primary" :disabled="isSubmitting || !meta.valid">

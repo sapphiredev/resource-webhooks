@@ -1,15 +1,15 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form class="flex flex-col" @submit="onSubmit">
-			<modals-review
+			<ModalsReview
 				v-if="modalStorage.identifier === ''"
 				:values="values"
 				:is-editing="false"
 				@close-modal="modalStorage.resetModal()"
 				@reset-form="resetForm()"
 			/>
-			<forms-textarea name="text" label="Message Text" />
-			<forms-select
+			<FormsTextarea name="text" label="Message Text" :required="true" />
+			<FormsSelect
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
 				add-new-option-href="/configure/webhooks"
@@ -17,7 +17,7 @@
 				:options="webhookStorage.webhooks"
 				:required="true"
 			/>
-			<forms-select
+			<FormsSelect
 				name="role"
 				label="Optionally choose a role to mention"
 				add-new-option-href="/configure/roles"

@@ -1,15 +1,15 @@
 <template>
 	<div class="mt-5 grid h-full w-full grid-cols-1 px-5">
 		<form class="flex flex-col" @submit="onSubmit">
-			<modals-review
+			<ModalsReview
 				v-if="modalStorage.identifier === ''"
 				:values="values"
 				:is-editing="true"
 				@close-modal="modalStorage.resetModal()"
 				@reset-form="resetForm()"
 			/>
-			<forms-textarea name="text" label="Message Text" />
-			<forms-select
+			<FormsTextarea name="text" label="Message Text" :required="true" />
+			<FormsSelect
 				name="webhookUrl"
 				label="Choose the webhook URL to post to"
 				add-new-option-href="/configure/webhooks"
@@ -17,7 +17,7 @@
 				:options="webhookStorage.webhooks"
 				:required="true"
 			/>
-			<forms-input name="messageId" label="Message id to update" />
+			<FormsInput name="messageId" label="Message id to update" :required="true" />
 			<button
 				type="button"
 				class="btn-shadow btn btn-primary w-full"
@@ -26,7 +26,7 @@
 			>
 				Fetch webhook message content from Discord
 			</button>
-			<forms-select
+			<FormsSelect
 				name="role"
 				label="Optionally choose a role to mention"
 				add-new-option-href="/configure/roles"

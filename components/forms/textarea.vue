@@ -1,7 +1,7 @@
 <template>
 	<div class="form-control h-1/2">
 		<label class="label">
-			<span class="label-text">{{ label }}</span>
+			<span class="label-text">{{ label }}<FormsRequiredStar :required="required" /></span>
 			<span v-if="lengthCount.length" class="label-text text-slate-600 dark:text-gray-400">Length per part: {{ lengthCount.join(', ') }}</span>
 		</label>
 		<textarea
@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ name: string; label: string }>();
+const props = defineProps<{ name: string; label: string; required?: boolean }>();
 
 const { value, errorMessage } = useField<string>(toRef(props, 'name'));
 
