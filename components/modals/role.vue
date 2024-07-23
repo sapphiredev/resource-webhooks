@@ -40,7 +40,7 @@ const { handleSubmit, resetForm, isSubmitting, meta } = useForm<PersistedStorage
 		value: props.role?.value ?? '',
 		label: props.role?.label ?? ''
 	},
-	validationSchema: addOrEditRoleSchema(props.action === 'edit')
+	validationSchema: toTypedSchema(addOrEditRoleSchema(props.action === 'edit'))
 });
 
 function handleClose(resetForm?: () => void) {

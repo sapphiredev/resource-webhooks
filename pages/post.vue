@@ -54,7 +54,7 @@ const { handleSubmit, resetForm, isSubmitting, meta, values } = useForm<Post>({
 		text: '',
 		role: null
 	},
-	validationSchema: postSchema
+	validationSchema: toTypedSchema(postSchema)
 });
 
 const onInvalidSubmit: InvalidSubmissionHandler<Post> = ({ errors }) => useInvalidFormSubmit(errors);

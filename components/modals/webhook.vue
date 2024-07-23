@@ -40,7 +40,7 @@ const { handleSubmit, resetForm, isSubmitting, meta } = useForm<PersistedStorage
 		value: props.webhook?.value ?? '',
 		label: props.webhook?.label ?? ''
 	},
-	validationSchema: addOrEditWebhookSchema(props.action === 'edit')
+	validationSchema: toTypedSchema(addOrEditWebhookSchema(props.action === 'edit'))
 });
 
 function handleClose(resetForm?: () => void) {

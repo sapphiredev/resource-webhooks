@@ -67,7 +67,7 @@ const { handleSubmit, resetForm, isSubmitting, meta, values, setFieldValue } = u
 		role: null,
 		messageId: ''
 	},
-	validationSchema: updateSchema
+	validationSchema: toTypedSchema(updateSchema)
 });
 
 const onInvalidSubmit: InvalidSubmissionHandler<Update> = ({ errors }) => useInvalidFormSubmit(errors);
