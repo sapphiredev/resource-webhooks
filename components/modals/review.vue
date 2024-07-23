@@ -29,12 +29,12 @@
 				</discord-messages>
 			</div>
 			<div class="mt-5 grid w-full grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-4">
-				<button aria-label="Cancel" type="button" class="btn btn-error" @click="emits('close-modal')">Cancel</button>
+				<button aria-label="Cancel" type="button" class="btn btn-error text-white" @click="emits('close-modal')">Cancel</button>
 				<button
 					v-show="status !== 'pending' && !error && data !== null"
 					aria-label="Confirm and post"
 					type="button"
-					class="btn btn-primary"
+					class="btn btn-primary text-white"
 					@click="handleConfirm"
 				>
 					Confirm
