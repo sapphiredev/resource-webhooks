@@ -1466,15 +1466,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/formatters@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@discordjs/formatters@npm:0.4.0"
-  dependencies:
-    discord-api-types: "npm:0.37.83"
-  checksum: 10/dbc75cf1048c928ddefb3d3f6268f8c153fce3030ef08afad06b7e2b1cd407451069eef1bcd903fc654d5e02fd1bf26372e12da41496182eb8fbee3dab87a83c
-  languageName: node
-  linkType: hard
-
 "@es-joy/jsdoccomment@npm:~0.46.0":
   version: 0.46.0
   resolution: "@es-joy/jsdoccomment@npm:0.46.0"
@@ -3194,7 +3185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@skyra/discord-components-core@npm:^4.0.0-alpha.20":
+"@skyra/discord-components-core@npm:^4.0.0-alpha.23":
   version: 4.0.0-alpha.23
   resolution: "@skyra/discord-components-core@npm:4.0.0-alpha.23"
   dependencies:
@@ -5454,13 +5445,6 @@ __metadata:
   dependencies:
     path-type: "npm:^4.0.0"
   checksum: 10/fa05e18324510d7283f55862f3161c6759a3f2f8dbce491a2fc14c8324c498286c54282c1f0e933cb930da8419b30679389499b919122952a4f8592362ef4615
-  languageName: node
-  linkType: hard
-
-"discord-api-types@npm:0.37.83":
-  version: 0.37.83
-  resolution: "discord-api-types@npm:0.37.83"
-  checksum: 10/63aee8b4634f98e24921ba7ba82eab30105917d7bf40739b7fbe327a8c93134a78408d842bd7ad7cf3f45948d86db5ec0cb670d66e0fe0f8229cb15bfda5108f
   languageName: node
   linkType: hard
 
@@ -12593,7 +12577,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "webhooks@workspace:."
   dependencies:
-    "@discordjs/formatters": "npm:^0.4.0"
     "@heroicons/vue": "npm:^2.1.5"
     "@nuxt/eslint": "npm:^0.3.13"
     "@nuxtjs/tailwindcss": "npm:^6.12.1"
@@ -12601,7 +12584,7 @@ __metadata:
     "@pinia/nuxt": "npm:^0.5.1"
     "@prettier/plugin-xml": "npm:^3.4.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
-    "@skyra/discord-components-core": "npm:^4.0.0-alpha.20"
+    "@skyra/discord-components-core": "npm:^4.0.0-alpha.23"
     "@tailvue/nuxt": "npm:^1.0.0"
     "@vee-validate/nuxt": "npm:^4.13.2"
     "@vee-validate/yup": "npm:^4.13.2"

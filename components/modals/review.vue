@@ -47,13 +47,13 @@
 <script setup lang="ts">
 import '@skyra/discord-components-core';
 
-import { bold } from '@discordjs/formatters';
 import type { Update } from '~/lib/types/Update';
 import { showToast } from '~/lib/utils/ShowToast';
 import { fetchWebhookProfile } from '~~/lib/api/FetchWebhookProfile';
 import { sendWebhookMessage } from '~~/lib/api/SendWebhookMessage';
 import type { Post } from '~~/lib/types/Post';
 import { markdownToDiscordWebComponents } from '~~/lib/utils/MarkdownToDiscordWebComponents';
+import { subscript } from '~/lib/utils/Formatters';
 
 const emits = defineEmits(['close-modal', 'reset-form']);
 const props = defineProps<{ values: Post | Update; isEditing: boolean }>();
@@ -63,8 +63,8 @@ const loadingStorage = useLoadingStore();
 
 const parseMarkdownishInput = () => {
 	let parsedText = props.values.text;
-	if (props.values.role && !props.values.text.startsWith(bold('New announcement for'))) {
-		parsedText = `${bold('New announcement for')} @${props.values.role.label.replace(/(.+) - \d{18,}/, '$1')}:\n${props.values.text}`;
+	if (props.values.role && !props.values.text.startsWith(subscript('New announcement for'))) {
+		parsedText = `${subscript('New announcement for')} @${props.values.role.label.replace(/(.+) - \d{18,}/, '$1')}:\n${props.values.text}`;
 	}
 
 	return markdownToDiscordWebComponents(parsedText);

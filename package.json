@@ -17,7 +17,6 @@
 		"format:check": "prettier --check ."
 	},
 	"devDependencies": {
-		"@discordjs/formatters": "^0.4.0",
 		"@heroicons/vue": "^2.1.5",
 		"@nuxt/eslint": "^0.3.13",
 		"@nuxtjs/tailwindcss": "^6.12.1",
@@ -25,7 +24,7 @@
 		"@pinia/nuxt": "^0.5.1",
 		"@prettier/plugin-xml": "^3.4.1",
 		"@sapphire/prettier-config": "^2.0.0",
-		"@skyra/discord-components-core": "^4.0.0-alpha.20",
+		"@skyra/discord-components-core": "^4.0.0-alpha.23",
 		"@tailvue/nuxt": "^1.0.0",
 		"@vee-validate/nuxt": "^4.13.2",
 		"@vee-validate/yup": "^4.13.2",
