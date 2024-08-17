@@ -23,7 +23,7 @@
 	"tailwindCSS.experimental.configFile": "tailwind.config.ts",
 	"prettier.documentSelectors": ["**/*.svg"],
 	"sonarlint.connectedMode.project": {
-		"connectionId": "https-sonarqube-sapphirejs-dev",
-		"projectKey": "sapphiredev_resource-webhooks_e2cb9959-cd79-4b35-a323-e26dee4ce7d4"
+		"connectionId": "sapphiredev",
+		"projectKey": "sapphiredev_resource-webhooks"
 	}
 }
