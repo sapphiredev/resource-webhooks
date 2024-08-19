@@ -68,7 +68,7 @@ export async function sendWebhookMessage(params: Post | Update, fetchMethod: 'po
 	}
 }
 
-const roleMatcherRegex = /<@&(?<id>\d{17,20})>/g;
+const roleMatcherRegex = /<@&(\d{17,20})>/g;
 function extractRoles(text: string): string[] {
 	const matches = text.matchAll(roleMatcherRegex);
 
