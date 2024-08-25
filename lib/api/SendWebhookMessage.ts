@@ -72,5 +72,5 @@ const roleMatcherRegex = /<@&(\d{17,20})>/g;
 function extractRoles(text: string): string[] {
 	const matches = text.matchAll(roleMatcherRegex);
 
-	return [...matches].map((match) => match.groups?.id).filter(Boolean) as string[];
+	return [...matches].map((match) => match.at(1)).filter(Boolean) as string[];
 }
