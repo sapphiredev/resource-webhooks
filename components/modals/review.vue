@@ -88,7 +88,7 @@ async function handleConfirm() {
 			timeout: 5,
 			pauseOnHover: true
 		});
-	} catch (error) {
+	} catch {
 		showToast({
 			type: 'denied',
 			message: `Failed to ${
