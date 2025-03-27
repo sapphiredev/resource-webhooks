@@ -1,6 +1,6 @@
-import { object, string } from 'yup';
+import { z } from 'zod';
 
-export const persistedStorageEntrySchema = object({
-	label: string().required('Label for the autocomplete option is required'),
-	value: string().required('Value for the autocomplete option is required')
+export const persistedStorageEntrySchema = z.object({
+	label: z.string({ required_error: 'Label for the autocomplete option is required' }),
+	value: z.string({ required_error: 'Value for the autocomplete option is required' })
 });
