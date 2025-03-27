@@ -1,6 +1,7 @@
 import '@pinia/nuxt';
 import '@vite-pwa/nuxt';
 import 'nuxt';
+import tailwindcss from '@tailwindcss/vite';
 
 const manifestIcons = [
 	{
@@ -56,10 +57,13 @@ export default defineNuxtConfig({
 			isCustomElement: (tag) => tag.startsWith('discord-')
 		}
 	},
+	vite: {
+		plugins: [tailwindcss()]
+	},
+	css: ['~/assets/app.css'],
 
 	modules: [
 		'@vueuse/nuxt',
-		'@nuxtjs/tailwindcss',
 		'@nuxt/eslint',
 		'@vite-pwa/nuxt',
 		'@pinia/nuxt',
