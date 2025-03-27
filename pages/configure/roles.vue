@@ -14,7 +14,7 @@
 			Add new role
 		</button>
 		<div class="overflow-x-auto shadow-md">
-			<table aria-label="Table of configured roles" class="table table-zebra table-pin-rows w-full">
+			<table aria-label="Table of configured roles" class="table-zebra table-pin-rows table w-full">
 				<thead>
 					<tr>
 						<th>Actions</th>

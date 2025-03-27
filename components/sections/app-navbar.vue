@@ -1,11 +1,11 @@
 <template>
-	<nav class="navbar sticky top-0 z-20 rounded-md bg-base-100 shadow-md dark:bg-base-200">
+	<nav class="navbar bg-base-100 dark:bg-base-200 sticky top-0 z-20 rounded-md shadow-md">
 		<div class="navbar-start flex items-center">
 			<details ref="mobileMenuDropdown" class="dropdown">
 				<summary tabindex="0" class="btn btn-ghost lg:hidden">
 					<Bars4Icon class="h-5 w-5" />
 				</summary>
-				<ul tabindex="0" class="menu-compact menu dropdown-content mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+				<ul tabindex="0" class="menu-compact menu dropdown-content rounded-box bg-base-100 mt-3 w-52 p-2 shadow">
 					<li>
 						<NuxtLink to="/" @click="mobileMenuDropdown?.removeAttribute('open')">Home</NuxtLink>
 					</li>

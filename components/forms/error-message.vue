@@ -3,7 +3,7 @@
 		<XCircleIcon class="h-7 w-7 text-white" />
 		<div>
 			<VeeErrorMessage :name="name" class="text-white" />
-			<div class="text-xs italic text-white">Resolve this error to submit</div>
+			<div class="text-xs text-white italic">Resolve this error to submit</div>
 		</div>
 	</div>
 </template>

@@ -1,7 +1,7 @@
 <template>
 	<div class="modal">
 		<form class="modal-box relative max-w-[40rem]" @submit="onSubmit">
-			<button aria-label="Close popup" class="btn btn-circle btn-sm absolute right-2 top-2" @click="handleClose(resetForm)">
+			<button aria-label="Close popup" class="btn btn-circle btn-sm absolute top-2 right-2" @click="handleClose(resetForm)">
 				<XCircleIcon />
 			</button>
 			<h3 class="text-lg font-bold">{{ action === 'add' ? 'Add a new role' : 'Update role' }}</h3>

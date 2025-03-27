@@ -14,7 +14,7 @@
 			Add new webhook
 		</button>
 		<div class="overflow-x-auto shadow-md">
-			<table aria-label="Table of configured webhooks" class="table table-zebra table-pin-rows w-full">
+			<table aria-label="Table of configured webhooks" class="table-zebra table-pin-rows table w-full">
 				<thead>
 					<tr>
 						<th>Actions</th>

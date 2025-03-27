@@ -1,5 +1,5 @@
 <template>
-	<div class="card w-full bg-base-100 px-2 shadow-xl">
+	<div class="card bg-base-100 w-full px-2 shadow-xl">
 		<div class="card-body">
 			<h2 class="card-title">{{ title }}</h2>
 			<p>{{ description }}</p>
