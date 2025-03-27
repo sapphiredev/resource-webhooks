@@ -2193,12 +2193,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit/context@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "@lit/context@npm:1.1.2"
+"@lit/context@npm:^1.1.3":
+  version: 1.1.4
+  resolution: "@lit/context@npm:1.1.4"
   dependencies:
     "@lit/reactive-element": "npm:^1.6.2 || ^2.0.0"
-  checksum: 10/e28c28d68a00a91691f412314e8fc453d6e13270db974e619c46736d8d77bcd0f0515d61d4f60ffa6915bb537272576bb5186a2b929c03cc0d0fe3c4cb86c23f
+  checksum: 10/9c8dea816c423fab05bf2f7fa644468d7c9842af44ebc5aa61edc78b926f63832413d33d6b913c3b8420edddc6e37d1188efadd7f7328e90c7fc2d727ce98a8c
   languageName: node
   linkType: hard
 
@@ -2729,15 +2729,6 @@ __metadata:
   peerDependencies:
     vue: ^3.3.4
   checksum: 10/f7742a62cdaf4fa8aeb776833ada661745cf92be593bd6eb5c6ad00b5004fb6a744f21e7e543ac3f94582bbe99653f808edf9a5f98e8ea971c4a3a09a06a8694
-  languageName: node
-  linkType: hard
-
-"@open-wc/lit-helpers@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@open-wc/lit-helpers@npm:0.7.0"
-  peerDependencies:
-    lit: ^2.0.0 || ^3.0.0
-  checksum: 10/2a8615e1c1ac2f7ddcc74fc66411200dc824a8f53c8b6432fa1411866dd86fbc487a21684df5d6cad0d85b2db05fb5046bc6ed023dcbd6a86544e447daacdf1c
   languageName: node
   linkType: hard
 
@@ -3438,14 +3429,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@skyra/discord-components-core@npm:^4.0.0-alpha.23":
-  version: 4.0.0-alpha.23
-  resolution: "@skyra/discord-components-core@npm:4.0.0-alpha.23"
+"@skyra/discord-components-core@npm:^4.0.0-alpha.38":
+  version: 4.0.0-alpha.38
+  resolution: "@skyra/discord-components-core@npm:4.0.0-alpha.38"
   dependencies:
-    "@lit/context": "npm:^1.1.2"
-    "@open-wc/lit-helpers": "npm:^0.7.0"
-    lit: "npm:^3.1.4"
-  checksum: 10/f863d780a68c4c1ed14d78a28ca42620c677bf353fdf6c5e142e18cf07fc92d7e701301f33a2285a143c1d62090cd1123f1861637a82fc233e2f77e57f17233d
+    "@lit/context": "npm:^1.1.3"
+    lit: "npm:^3.2.1"
+  checksum: 10/3c8402d999d91adf670b0d557b6e59680ea4d0c279a8e9d1c4779a35c037d8b15f7eb6dc0671ac399145881c1ac363fa3daa070a2a24b48d6eb7f657c4838b85
   languageName: node
   linkType: hard
 
@@ -8489,34 +8479,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit-element@npm:^4.0.4":
-  version: 4.0.4
-  resolution: "lit-element@npm:4.0.4"
+"lit-element@npm:^4.1.0":
+  version: 4.1.1
+  resolution: "lit-element@npm:4.1.1"
   dependencies:
     "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
     "@lit/reactive-element": "npm:^2.0.4"
-    lit-html: "npm:^3.1.2"
-  checksum: 10/d5afc94e5517713585ae66b87efe808791dd32b7918a096bb23471d022e6f3696524155f78645cd7483465693dffed39d0fef68e1106ad9e51f4d7944b69e7b3
+    lit-html: "npm:^3.2.0"
+  checksum: 10/5d1576f63fec21ac10247a67232ff7f1640210cd5b10b8082eb692242b1f74ef2a822d05bd0e330baf5eeb6f0f9c8d5a223e11525f4f96ea668e74009f0d0d23
   languageName: node
   linkType: hard
 
-"lit-html@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "lit-html@npm:3.1.2"
+"lit-html@npm:^3.2.0":
+  version: 3.2.1
+  resolution: "lit-html@npm:3.2.1"
   dependencies:
     "@types/trusted-types": "npm:^2.0.2"
-  checksum: 10/601388faae8a40167906c20736645233db4c36819a2f727c5eb1926e00a17d96da7768f5b41bed31bfdcc42887e4b52881e21b9caee170b1bc9a82f96b510644
+  checksum: 10/d670a8e49da98d04b83dd13807fec86305d85915b30814c5461e7a34d001ce1efcd8395467897118d0ab5c09d9c224617b25a4eb2b743491f634f6a3bf155753
   languageName: node
   linkType: hard
 
-"lit@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "lit@npm:3.1.4"
+"lit@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "lit@npm:3.2.1"
   dependencies:
     "@lit/reactive-element": "npm:^2.0.4"
-    lit-element: "npm:^4.0.4"
-    lit-html: "npm:^3.1.2"
-  checksum: 10/54799818821b66f121ab7f27909e1fd0937b2f9a36b32534804056920cb12d43f2e0bc7085021910c69d0a386cb68df4d04c2dae5b7a544395288b403f381a0e
+    lit-element: "npm:^4.1.0"
+    lit-html: "npm:^3.2.0"
+  checksum: 10/6a2cd0547b3ccff11f41753d1d98d789ed1051aef8fb0865344c7e1e4d77aafcf384f660c6d98125cc81ea0c9f87786528742d359359a52d7af956eefb713fe4
   languageName: node
   linkType: hard
 
@@ -12862,7 +12852,7 @@ __metadata:
     "@pinia/nuxt": "npm:^0.10.1"
     "@prettier/plugin-xml": "npm:^3.4.1"
     "@sapphire/prettier-config": "npm:^2.0.0"
-    "@skyra/discord-components-core": "npm:^4.0.0-alpha.23"
+    "@skyra/discord-components-core": "npm:^4.0.0-alpha.38"
     "@tailvue/nuxt": "npm:^1.0.0"
     "@tailwindcss/vite": "npm:^4.0.17"
     "@vee-validate/nuxt": "npm:^4.15.0"
