@@ -1,13 +1,13 @@
 <template>
-	<div class="form-control h-1/2">
-		<label class="label">
+	<div class="form-control flex h-1/2 flex-col gap-2">
+		<label class="label flex w-full justify-between">
 			<span class="label-text">{{ label }}<FormsRequiredStar :required="required" /></span>
 			<span v-if="lengthCount.length" class="label-text text-slate-600 dark:text-gray-400">Length per part: {{ lengthCount.join(', ') }}</span>
 		</label>
 		<textarea
 			v-model="value"
 			type="text"
-			class="textarea textarea-bordered h-full font-mono shadow-md"
+			class="textarea textarea-bordered h-full w-full font-mono shadow-md"
 			:class="{ 'input-error': !!errorMessage }"
 		/>
 		<label class="label">

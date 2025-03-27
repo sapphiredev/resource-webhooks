@@ -1,10 +1,10 @@
 <template>
-	<div class="form-control mb-4 w-full">
+	<div class="form-control mb-4 flex w-full flex-col gap-2">
 		<label class="label">
 			<span class="label-text">
-				{{ label }}<FormsRequiredStar :required="required" />
+				{{ label }} <FormsRequiredStar :required="required" />
 				<span v-if="options.length === 0">
-					<span class="font-bold text-error">
+					<span class="text-error font-bold">
 						<NuxtLink :aria-label="`Go to configuration page for ${label}`" class="link link-secondary" :to="addNewOptionHref"
 							>configuration page</NuxtLink
 						>

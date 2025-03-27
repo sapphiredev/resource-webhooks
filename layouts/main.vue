@@ -2,12 +2,12 @@
 	<div class="h-full px-2 py-2 pb-20" @click="mobileMenuDropdown?.close()">
 		<div class="grid-layout grid min-h-full">
 			<sections-app-navbar ref="mobileMenuDropdown" />
-			<section class="grid-layout-container grid h-[calc(100vh_-_64px)] overflow-auto pb-20 lg:pb-0">
-				<main>
-					<slot></slot>
-				</main>
-				<sections-app-footer />
-			</section>
+			<main
+				class="grid-rows-[1fr 0.2fr] grid h-[calc(100vh_-_64px)] gap-0 overflow-auto pb-20 [grid-template-areas:'sp-grid-content''sp-grid-footer'] lg:pb-0"
+			>
+				<slot class="sp-grid-content"></slot>
+				<sections-app-footer class="sp-grid-footer" />
+			</main>
 		</div>
 	</div>
 </template>

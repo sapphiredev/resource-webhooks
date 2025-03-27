@@ -17,15 +17,17 @@
 				:options="webhookStorage.webhooks"
 				:required="true"
 			/>
-			<FormsInput name="messageId" label="Message id to update" :required="true" />
-			<button
-				type="button"
-				class="btn-shadow btn btn-primary w-full"
-				:disabled="!values.messageId || !values.webhookUrl"
-				@click="getMessageContent()"
-			>
-				Fetch webhook message content from Discord
-			</button>
+			<div class="flex flex-col gap-2">
+				<FormsInput name="messageId" label="Message id to update" :required="true" />
+				<button
+					type="button"
+					class="btn-shadow btn btn-primary mb-2 w-full"
+					:disabled="!values.messageId || !values.webhookUrl"
+					@click="getMessageContent()"
+				>
+					Fetch webhook message content from Discord
+				</button>
+			</div>
 			<FormsSelect
 				name="role"
 				label="Optionally choose a role to mention"
